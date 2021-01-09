@@ -1,0 +1,46 @@
+{
+  "name": "svelte-app2",
+  "version": "1.0.0",
+  "@comments scripts": {
+    "dev": "run all dev:* scripts",
+    "dev:routify": "generate Routify's routes.js on filechange",
+    "build": "run all build:* scripts",
+    "build:routify": "build routify",
+    "serve": "serve content in 'dist' folder"
+  },
+  "scripts": {
+    "dev": "run-p dev:* serve:*",
+    "dev:routify": "routify",
+    "serve": "run-p serve:*",
+    "serve:spa": "spassr",
+    "serve:ssr": "spassr --ssr --port 5005",
+    "build": "run-s build:*",
+    "build:routify": "routify -b"
+  },
+  "devDependencies": {
+    "@roxi/routify": "^2.5.1-next-major",
+    "npm-run-all": "^4.1.5",
+    "svelte": "^3.30.1"
+  },
+  "routify": {
+    "extensions": "svelte,html,svx,md"
+  },
+  "@comment options": [
+    "config provides defaults for spassr, spank, tossr and poindexter.",
+    "You can delete the field and this comment, if you use neither."
+  ],
+  "options": {
+    "assets": "assets",
+    "dist": "dist",
+    "script": "dist/build/main.js",
+    "template": "assets/__app.html",
+    "port": 5000
+  },
+  "spassr": {
+    "assetsDir": ["dist", "assets"],
+    "script": "dist/build/main.js",
+    "ssrOptions": {
+      "inlineDynamicImports": true
+    }
+  }
+}

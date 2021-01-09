@@ -1,0 +1,21 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "@comments scripts": {
+    "dev:rollup": "develop with features like SSR and serviceworker enabled",
+    "build:rollup": "build rollup"
+  },
+  "scripts": {    
+    "dev": "run-p dev:routify dev:nollup",
+    "dev:nollup": "nollup -c",
+    "dev:ssr": "run-p dev:routify dev:rollup serve"
+  },
+  "devDependencies": {    
+    "nollup": "^0.13.13",
+    "rollup": "^2.33.1",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "spassr": "^2.1.6"
+  }
+}

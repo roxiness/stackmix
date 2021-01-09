@@ -1,0 +1,23 @@
+{
+    "name": "routify-templates",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev":"canvasit --watch --output output",
+      "build": "node generate"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "canvasit": "workspace:^0.0.3"
+    },
+    "canvasit": {
+      "basepath": "fragments",
+      "@exec": "pnpm install && pnpm dev",
+      "ignore": ["node_modules", "dist", ".routify"],
+      "include": ["base"]
+    }
+  }
+  
