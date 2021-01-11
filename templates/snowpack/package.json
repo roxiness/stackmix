@@ -1,14 +1,12 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-app2",
   "version": "1.0.0",
   "@comments scripts": {
     "dev": "run all dev:* scripts",
     "dev:routify": "generate Routify's routes.js on filechange",
     "build": "run all build:* scripts",
     "build:routify": "build routify",
-    "serve": "serve content in 'dist' folder",
-    "dev:rollup": "develop with features like SSR and serviceworker enabled",
-    "build:rollup": "build rollup"
+    "serve": "serve content in 'dist' folder"
   },
   "scripts": {
     "dev": "run-p dev:*",
@@ -18,10 +16,6 @@
     "serve:ssr": "spassr --ssr --port 5005",
     "build": "run-s build:*",
     "build:routify": "routify -b",
-    "dev:rollup": "rollup -cw",
-    "build:rollup": "rollup -c",
-    "dev:nollup": "nollup -c",
-    "dev:ssr": "run-p dev:routify dev:rollup serve",
     "dev:snowpack": "snowpack dev",
     "build:snowpack": "snowpack build"
   },
@@ -29,12 +23,6 @@
     "@roxi/routify": "^2.5.1-next-major",
     "npm-run-all": "^4.1.5",
     "svelte": "^3.30.1",
-    "rollup": "^2.33.1",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^6.1.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "spassr": "^2.1.6",
-    "nollup": "^0.13.13",
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-svelte": "^3.4.0",
     "snowpack": "^2.18.4"

@@ -1,4 +1,4 @@
-const { merge } = require('canvasit')
+
 const { resolve } = require('path')
 
 const combinations = [
@@ -8,6 +8,8 @@ const combinations = [
 ]
 
 combinations.forEach(fragments => {
+    Object.keys(require.cache).forEach(key => delete require.cache[key])
     const dest = resolve('templates', fragments.join('-'))
+    const { merge } = require('canvasit')
     merge(fragments, dest)
 })
