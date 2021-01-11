@@ -3,7 +3,8 @@ const { resolve } = require('path')
 
 const combinations = [
     ['rollup'],
-    ['rollup', 'nollup']
+    ['rollup', 'nollup'],
+    ['snowpack']
 ]
 
 combinations.forEach(fragments => {

@@ -4,5 +4,3 @@
 </script>
 
 <Router {routes} />
-
-asdsd

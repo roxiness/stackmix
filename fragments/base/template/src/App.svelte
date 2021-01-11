@@ -8,6 +8,3 @@ __STYLE__
 
 <Router {routes} />
 __HTML__
-
-
-asdsd
