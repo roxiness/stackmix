@@ -38,6 +38,7 @@
   },
   "spassr": {
     "assetsDir": ["dist", "assets"],
+    "entrypoint": "assets/__app.html",
     "script": "dist/build/main.js",
     "ssrOptions": {
       "inlineDynamicImports": true

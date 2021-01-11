@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:ssg": "spank"
+  },
+  "devDependencies": {
+    "spank": "^1.5.0"
+  }
+}
