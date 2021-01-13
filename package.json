@@ -1,23 +1,40 @@
 {
-    "name": "routify-templates",
-    "version": "0.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev":"canvasit --watch -output output",
-      "build": "node generate"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "canvasit": "^0.0.3"
-    },
-    "canvasit": {
-      "basepath": "fragments",
-      "@exec": "pnpm install && pnpm dev",
-      "ignore": ["node_modules", "dist", ".routify"],
-      "include": ["base"]
-    }
+  "name": "routify-templates",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "canvasit --watch -output output",
+    "test": "ava",
+    "test:builds": "ava templates/**/*.test.js",
+    "test:output": "ava output/**/*.test.js",
+    "build": "node generate"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvasit": "^0.0.3"
+  },
+  "canvasit": {
+    "basepath": "fragments",
+    "@exec": "pnpm install && pnpm dev",
+    "ignore": [
+      "node_modules",
+      "dist",
+      ".routify"
+    ],
+    "include": [
+      "base"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "playwright": "^1.7.1"
+  },
+  "ava": {
+    "ignoredByWatcher": [
+      "**/.routify",
+      "**/dist"
+    ]
   }
-  
+}
