@@ -51,4 +51,8 @@ export default {
     !production && isNollup && Hmr({ inMemory: true, public: assetsDir }), // refresh only updated code,
     !production && !isNollup && livereload(distDir), // refresh entire window when code is updated
   ],
+  watch: {
+    clearScreen: false,
+    buildDelay: 100,
+  },
 }
