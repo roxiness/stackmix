@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "canvasit --watch -output output",
+    "generate": "canvasit -output output",
     "test": "ava",
     "test:builds": "ava templates/**/*.test.js",
     "test:output": "ava output/**/*.test.js",
@@ -13,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "canvasit": "^0.0.3"
+    "canvasit": "^0.0.5"
   },
   "canvasit": {
     "basepath": "fragments",

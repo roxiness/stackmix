@@ -3,7 +3,7 @@ module.exports = {
         svelte: {
             dev: "!production", // run-time checks      
             // Extract component CSS — better performance
-            css: "css => css.write(`bundle.css`)",
+            // css: "css => css.write(`bundle.css`)",
             preprocess: []
         },
         packagejson: require('./template/package.json')

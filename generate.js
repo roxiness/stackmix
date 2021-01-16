@@ -4,7 +4,8 @@ const { resolve } = require('path')
 const combinations = [
     ['rollup'],
     ['rollup', 'nollup'],
-    ['snowpack']
+    ['snowpack'],
+    ['rollup','i18n','navigation','content','miligram','mdsvex']
 ]
 
 combinations.forEach(fragments => {

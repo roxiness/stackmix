@@ -36,7 +36,6 @@ export default {
   plugins: [
     svelte({
       dev: !production,
-      css: (css) => css.write(`bundle.css`),
       preprocess: [],
       hot: isNollup,
     }),

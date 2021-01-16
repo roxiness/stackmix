@@ -24,6 +24,7 @@ module.exports = {
                 `!production && livereload(distDir), // refresh entire window when code is updated`,
                 `production && copyToDist()`,
             ],
+            watch: { clearScreen: "false" }
         },
         packagejson: require('./template/package.json')
     }),

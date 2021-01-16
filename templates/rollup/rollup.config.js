@@ -33,7 +33,6 @@ export default {
   plugins: [
     svelte({
       dev: !production,
-      css: (css) => css.write(`bundle.css`),
       preprocess: [],
     }),
     resolve({
@@ -45,4 +44,7 @@ export default {
     !production && livereload(distDir), // refresh entire window when code is updated,
     production && copyToDist(),
   ],
+  watch: {
+    clearScreen: false,
+  },
 }
