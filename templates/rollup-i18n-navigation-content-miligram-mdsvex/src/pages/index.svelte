@@ -7,4 +7,6 @@
   }
 </script>
 
-<h1>{dict[$language.short]}</h1>
+<h1>
+  {dict[$language.short]}
+</h1>

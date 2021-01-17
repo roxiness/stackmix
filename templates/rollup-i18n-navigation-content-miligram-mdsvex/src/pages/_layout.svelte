@@ -9,11 +9,11 @@
     <NavBar />
   </aside>
   <section>
-    <header></header>
+    <header />
     <main class="container">
       <slot />
     </main>
-    <footer></footer>
+    <footer />
   </section>
 </div>
 

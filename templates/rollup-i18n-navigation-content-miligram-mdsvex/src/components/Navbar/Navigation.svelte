@@ -23,15 +23,15 @@
 
 <ul>
   {#each items as { path, title, children, ...rest }}
-  <li data-nav-depth="{_depth}">
-    <!-- we use $url to resolve the path  -->
-    <a href="{$url(path)}" class="{getClass(path)}"> {title}</a>
+    <li data-nav-depth={_depth}>
+      <!-- we use $url to resolve the path  -->
+      <a href={$url(path)} class={getClass(path)}> {title}</a>
 
-    <!-- parse nested children here -->
-    {#if items && _depth < maxDepth && shouldExplode(path)}
-    <svelte:self items="{children}" {maxDepth} {_depth} />
-    {/if}
-  </li>
+      <!-- parse nested children here -->
+      {#if items && _depth < maxDepth && shouldExplode(path)}
+        <svelte:self items={children} {maxDepth} {_depth} />
+      {/if}
+    </li>
   {/each}
 </ul>
 

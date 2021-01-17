@@ -3,7 +3,7 @@
   export let slug;
 
   $: postsFolder = $components.find(({ meta }) => meta.name === "postEntries");
-  $: Post = postsFolder.children.find((node) => node.path.endsWith(slug));
+  $: Post = postsFolder.children.find((node) => node.path.split('/').pop() === slug);
   
 </script>
 

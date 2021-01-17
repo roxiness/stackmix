@@ -35,8 +35,8 @@
   }
 </script>
 
-<select bind:value="{$language}" on:change="{handleChange}">
+<select bind:value={$language} on:change={handleChange}>
   {#each Object.values(languages) as lang}
-  <option value="{lang}">{lang.long}</option>
+    <option value={lang}>{lang.long}</option>
   {/each}
 </select>

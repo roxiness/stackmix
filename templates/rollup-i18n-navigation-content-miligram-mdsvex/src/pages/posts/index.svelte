@@ -6,8 +6,8 @@
 
 <dl>
   {#each posts as { meta, title, path }}
-  <dt>
-    <a href='{$url("./:slug", { slug: path.split("/").pop() })}'>{title}</a>
-  </dt>
+    <dt>
+      <a href={$url('./:slug', { slug: path.split('/').pop() })}>{title}</a>
+    </dt>
   {/each}
 </dl>
