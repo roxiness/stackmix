@@ -5,7 +5,7 @@ const combinations = [
     ['rollup'],
     ['rollup', 'nollup'],
     ['snowpack'],
-    ['rollup','i18n','navigation','content','miligram','mdsvex']
+    ['rollup','i18n','navigation','content','miligram','mdsvex', 'auth']
 ]
 
 combinations.forEach(fragments => {
