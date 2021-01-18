@@ -1,11 +1,15 @@
 <script>
   import NavBar from '../components/Navbar/Bar.svelte'
   import Lang from '../components/Lang.svelte'
+  import Link from '../components/auth/Link.svelte'
 </script>
 
 <div id="app">
   <aside>
     <div><Lang /></div>
+    <div>
+      <Link />
+    </div>
     <NavBar />
   </aside>
   <section>

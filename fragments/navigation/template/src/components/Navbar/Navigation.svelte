@@ -38,8 +38,9 @@
   .active {
     font-weight: bold;
   }
-  ul {
-    padding-left: 12px;
+  ul {margin-left: 0}
+  li {
+    margin-left: 12px;
   }
   li {
     list-style: none;

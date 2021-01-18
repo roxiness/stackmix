@@ -1,5 +1,6 @@
 <script>
-  import Login, { authenticating, user, logout } from "../../components/Login.svelte";
+  import Login from "../../components/Auth/Login.svelte";
+  import { authenticating, user, logout } from "../../components/Auth/store.js";
   import { url } from "@roxi/routify";
 </script>
 
@@ -12,7 +13,7 @@
     {#if $user}
       <slot />
     {:else if $authenticating}
-      authenticating
+      <h2>authenticating...</h2>
     {:else}
       <Login />
     {/if}
@@ -30,6 +31,11 @@
     color: white;
   }
   * :global(code) {
-    color: initial
+    color: initial;
+  }
+  button {
+    position: absolute;
+    right: 16px;
+    top: 16px
   }
 </style>

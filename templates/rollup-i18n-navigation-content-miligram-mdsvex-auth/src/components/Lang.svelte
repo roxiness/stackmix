@@ -8,18 +8,29 @@
     de: { short: 'de', long: 'german' },
   }
 
+  // let's use a store for reactivity
   const language = writable(languages['en'])
 
   const urlTransform = {
     apply: (url) => {
+      /**
+       * external URL
+       * if the selected language is not the default language,
+       * we want to use the language as an URL prefix
+       */
       const lang = get(language)
       const prefix = !lang.default ? `/${lang.short}` : ''
       return prefix + url
-    }, //external URL,
+    },
     remove: (url) => {
-      const [, first, ...rest] = url.split('/')
-      if (languages[first]) {
-        language.set(languages[first])
+      /**
+       * internal URL
+       * if the first url fragment matches a language,
+       * we're gonna strip the fragment
+       */
+      const [, urlPrefix, ...rest] = url.split('/')
+      if (languages[urlPrefix]) {
+        language.set(languages[urlPrefix])
         return [, ...rest].join('/')
       } else return url
     },

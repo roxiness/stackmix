@@ -5,8 +5,9 @@
 
 <div id="app">
   <aside>
-      __NAVIGATION__
+    __NAVIGATION__
     <NavBar />
+    __NAVIGATION_RIGHT__
   </aside>
   <section>
     <header>__HEADER__</header>
@@ -19,11 +20,11 @@
 </div>
 
 <style>
-    #app {
-        display: grid;
-        grid-template-columns: 140px auto;
-    }
-    main {
-      padding-top: 64px;
-    }
+  #app {
+    display: grid;
+    grid-template-columns: 140px auto;
+  }
+  main {
+    padding-top: 64px;
+  }
 </style>
