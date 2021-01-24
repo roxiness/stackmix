@@ -5,17 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "canvasit --watch -output output",
+    "help": "canvasit help",
     "generate": "canvasit -output output",
-    "test": "ava",
-    "test:builds": "ava templates/**/*.test.js",
-    "test:output": "ava output/**/*.test.js",
+    "test:output:dev": "cd output && npm run test:dev",
+    "test:output:build": "cd output && npm run test:build",
     "build": "node generate"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "canvasit": "^0.0.5"
-  },
   "canvasit": {
     "basepath": "fragments",
     "@exec": "pnpm install && pnpm dev",
@@ -30,12 +27,18 @@
   },
   "devDependencies": {
     "ava": "^3.15.0",
-    "playwright": "^1.7.1"
+    "playwright": "^1.7.1",
+    "prettier-plugin-svelte": "^2.1.0",
+    "start-server-and-test": "^1.11.7",
+    "svelte": "^3.31.2"
   },
   "ava": {
     "ignoredByWatcher": [
       "**/.routify",
       "**/dist"
     ]
+  },
+  "dependencies": {
+    "canvasit": "^0.1.1"
   }
 }
