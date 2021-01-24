@@ -4,6 +4,7 @@ module.exports = {
             devDependencies: {
                 mdsvex: '^0.8.9',
                 "remark-slug": "^6.0.0",
+                "routify-plugin-frontmatter": "^1.0.1",
             },
             routify: {
                 extensions: ['md', 'svelte'],
