@@ -21,8 +21,7 @@ module.exports = {
                 "commonjs()",
 
                 `production && terser()`,
-                `!production && livereload(distDir), // refresh entire window when code is updated`,
-                `production && copyToDist()`,
+                `!production && livereload(assetsDir), // refresh entire window when code is updated`,
             ],
             watch: { clearScreen: "false" }
         },

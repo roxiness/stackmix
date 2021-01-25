@@ -1,7 +1,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    assets: { url: '/', static: true },
+    public: { url: '/', static: true },
     src: { url: '/' },
     '.routify': { url: '/.routify' }
   },

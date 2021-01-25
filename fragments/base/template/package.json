@@ -35,19 +35,18 @@
     "You can delete the field and this comment, if you use neither."
   ],
   "options": {
-    "assets": "assets",
+    "assets": "public",
     "dist": "dist",
     "script": "dist/build/main.js",
-    "template": "assets/__app.html",
+    "template": "public/__app.html",
     "port": 5000
   },
   "spassr": {
     "assetsDir": [
-      "dist",
-      "assets"
+      "public"
     ],
-    "entrypoint": "assets/__app.html",
-    "script": "dist/build/main.js",
+    "entrypoint": "public/__app.html",
+    "script": "public/build/main.js",
     "ssrOptions": {
       "inlineDynamicImports": true
     }
