@@ -5,6 +5,7 @@ const fkill = require('fkill')
 const npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm'
 const npx = /^win/.test(process.platform) ? 'npx.cmd' : 'npx'
 
+// assign `dev` or `build` to mode and `ava` to cmd
 const [mode, cmd, ...args] = process.argv.slice(2)
 
 const setups = {
