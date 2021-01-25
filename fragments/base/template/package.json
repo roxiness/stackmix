@@ -16,9 +16,9 @@
     "serve:ssr": "spassr --ssr --port 5005",
     "build": "run-s build:*",
     "build:routify": "routify -b",
-    "pretest:dev": "node test/preDev",
-    "test:dev": "ava test/{common,dev}/**/*.test.js",
-    "posttest:dev": "node test/postDev"
+    "test": "npm run test:dev && npm run test:build",
+    "test:dev": "node test/wrapper dev ava test/{common,dev}/**/*.test.js",
+    "test:build": "node test/wrapper build ava test/{common,build}/**/*.test.js"
   },
   "devDependencies": {
     "@roxi/routify": "latest",
@@ -53,5 +53,6 @@
     }
   },
   "ava": {
+    "verbose": true
   }
 }
