@@ -45,4 +45,7 @@
   li {
     list-style: none;
   }
+  a {
+    text-transform: capitalize;
+  }
 </style>

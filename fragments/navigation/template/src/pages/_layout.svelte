@@ -23,8 +23,17 @@
   #app {
     display: grid;
     grid-template-columns: 140px auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
   main {
     padding-top: 64px;
+  }
+  aside {
+    padding: 16px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.2);
+    height: 100%;
+    width: 196px;
   }
 </style>
