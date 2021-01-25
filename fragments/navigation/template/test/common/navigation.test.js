@@ -6,13 +6,12 @@
 
 const test = require('ava')
 const { pageMacro } = require('../pageMacro')
-const opts = { timeout: 500 }
 
 
 test('can navigate', pageMacro, async (t, page) => {
     await page.goto('http://dev.local:5000/')
-    t.assert(await page.waitForSelector('nav', opts))
+    t.assert(await page.waitForSelector('nav'))
     
-    await page.click('"posts"', opts)
-    t.assert(await page.waitForSelector('"something about html"', opts))
+    await page.click('"posts"')
+    t.assert(await page.waitForSelector('"something about html"'))
 })
