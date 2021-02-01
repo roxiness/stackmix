@@ -1,33 +1,31 @@
 <script>
   __SCRIPT__;
   import Navbar from "../components/navigation/Navbar.svelte";
-  import decorator from "../components/Decorator.svelte";
+  import { TabsTransition } from "@roxi/routify/decorators";
 </script>
 
-<header>__NAVIGATION__ __HEADER__</header>
+<div id="app">
+  <header>__NAVIGATION__ __HEADER__</header>
+  <main>
+    __HTML__
+    <slot decorator={TabsTransition} scoped={{ SiblingIndexIsAncestor: true }} />
+  </main>
 
-<main>
-  __HTML__
-  <slot {decorator} scoped={{ SiblingIndexIsAncestor: true }} />
-</main>
-
-<footer>
-  <Navbar />
-  __FOOTER__
-</footer>
+  <footer>
+    <Navbar />
+    __FOOTER__
+  </footer>
+</div>
 
 <style>
-  :global(body) {
-    padding: 0;
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
   }
   main {
-    bottom: 64px;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    flex-grow: 1;
+    overflow: auto;
   }
   :global(._posts_index) {
     background: #0bf5cc;
@@ -44,15 +42,15 @@
   :global(.post) {
     background: white;
   }
-  :global(.page) {
+  :global(.decorator) {
     height: 100%;
     overflow-y: auto;
   }
-  :global(.page>:last-child) {
+  :global(.page > :last-child) {
     margin-bottom: 96px;
   }
   :global(.container) {
+    padding-top: 32px;
     padding-bottom: 32px;
-    background: white;
   }
 </style>
