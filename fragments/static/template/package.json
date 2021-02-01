@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build:ssg": "spank"
+    "build:static": "spank"
   },
   "devDependencies": {
     "spank": "^1.5.0"
