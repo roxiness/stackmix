@@ -1,3 +1,7 @@
+<!-- routify:options author="Jake" -->
+<!-- routify:options date="2021-01-31T14:46:59.959Z" -->
+<!-- routify:options summary="There are two axes differentiating various variations of HTML as currently specified: SGML-based HTML versus XML-based  HTML (referred to as XHTML) on one axis, and strict versus transitional (loose) versus frameset on the other axis." -->
+
 <h1>HTML FTW</h1>
 <p>
   There are two axes differentiating various variations of HTML as currently specified: SGML-based HTML versus XML-based

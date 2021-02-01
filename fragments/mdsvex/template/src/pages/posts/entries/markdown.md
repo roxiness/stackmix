@@ -1,4 +1,9 @@
-
+---
+date: 2021-01-31T14:46:59.959Z
+author: Jake
+summary: 
+    In 2002 Aaron Swartz created atx, "the true structured text format". Swartz and John Gruber then worked together to create the Markdown language in 2004,
+---
 
 # Markdown [md]
 
