@@ -25,7 +25,8 @@
   }
   main {
     flex-grow: 1;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   :global(._posts_index) {
     background: #0bf5cc;
@@ -33,7 +34,7 @@
   :global(._contact_index) {
     background: #a1fac3;
   }
-  :global(._home) {
+  :global(._home_index) {
     background: #88f0d0;
   }
   :global(._introduction_index) {
@@ -43,7 +44,6 @@
     background: white;
   }
   :global(.decorator) {
-    height: 100%;
     overflow-y: auto;
   }
   :global(.page > :last-child) {
