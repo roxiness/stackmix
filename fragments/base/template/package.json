@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app2",
+  "name": "routify-app",
   "version": "1.0.0",
   "@comments scripts": {
     "dev": "run all dev:* scripts",
@@ -36,8 +36,7 @@
   ],
   "options": {
     "assets": "public",
-    "dist": "dist",
-    "script": "dist/build/main.js",
+    "script": "public/build/main.js",
     "template": "public/__app.html",
     "port": 5000
   },
