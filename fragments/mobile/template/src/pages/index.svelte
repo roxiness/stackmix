@@ -1,1 +1,1 @@
-Mobile index.svelte
+<!-- routify:options redirect="/home" -->
