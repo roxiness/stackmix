@@ -1,6 +1,4 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
   "@comments scripts": {
     "dev:rollup": "develop with features like SSR and serviceworker enabled",
     "build:rollup": "build rollup"
@@ -10,6 +8,8 @@
     "build:rollup": "rollup -c"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.1.0",
+    "@rollup/plugin-commonjs":"^17.0.0",
     "rollup": "^2.33.1",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^6.1.0",
