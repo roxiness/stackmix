@@ -1,6 +1,4 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
   "@comments scripts": {
     "dev:rollup": "develop with features like SSR and serviceworker enabled",
     "build:rollup": "build rollup"
