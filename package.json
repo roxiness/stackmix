@@ -15,7 +15,7 @@
   "license": "ISC",
   "canvasit": {
     "basepath": "fragments",
-    "@exec": "pnpm install && pnpm dev",
+    "@exec": "npm install && npm dev",
     "ignore": [
       "node_modules",
       "dist",
@@ -26,17 +26,8 @@
     ]
   },
   "devDependencies": {
-    "ava": "^3.15.0",
-    "playwright": "^1.7.1",
     "prettier-plugin-svelte": "^2.1.0",
-    "start-server-and-test": "^1.11.7",
     "svelte": "^3.31.2"
-  },
-  "ava": {
-    "ignoredByWatcher": [
-      "**/.routify",
-      "**/dist"
-    ]
   },
   "dependencies": {
     "canvasit": "^0.1.1"
