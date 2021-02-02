@@ -1,1 +1,1 @@
-<!-- routify:options redirect="/home" -->
+<!-- routify:options redirect="/home/index" -->
