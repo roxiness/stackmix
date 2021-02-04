@@ -50,6 +50,10 @@
       "inlineDynamicImports": true
     }
   },
+  "spank": {
+    "entrypoint": "public/__app.html",
+    "script": "public/build/main.js"
+  },
   "ava": {
     "verbose": true
   }
