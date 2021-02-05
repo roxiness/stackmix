@@ -1,14 +1,15 @@
 <script>
-  import { afterPageLoad } from "@roxi/routify";
-  let overlayElem;
-  let elHandle;
-  let width;
+  import { afterPageLoad, route } from "@roxi/routify";
+  let overlayElem, elHandle, width, height;
 
   $afterPageLoad(updateOverlay);
-  $: width && updateOverlay()
+  $: (width || height) && updateOverlay();
 
-  function updateOverlay() {
+  function updateOverlay(target) {
     const { x, y, width, height } = elHandle.getElementsByClassName("is-active")[0].getBoundingClientRect();
+    const movingOnY = parseInt(y) === parseInt(overlayElem.style.top);
+
+    overlayElem.style.transition = movingOnY && target ? "all 0.3s" : "none";
     overlayElem.style.top = `${y}px`;
     overlayElem.style.left = `${x}px`;
     overlayElem.style.width = `${width}px`;
@@ -16,16 +17,10 @@
   }
 </script>
 
-<div bind:this={elHandle} bind:clientWidth={width}>
+<svelte:window bind:innerWidth={width} bind:innerHeight={height} />
+
+<div bind:this={elHandle}>
   <slot />
 </div>
 
 <div class="overlay" bind:this={overlayElem} />
-
-<style>
-  .overlay {
-    transition: all 0.3s;
-    position: fixed;
-    border-bottom: 3px solid #a1fac3;
-  }
-</style>
