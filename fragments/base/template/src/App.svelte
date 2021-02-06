@@ -4,7 +4,8 @@
     __SCRIPT__
 </script>
 
+<style global>
 __STYLE__
-
+</style>
 
 __HTML__
