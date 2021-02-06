@@ -5,6 +5,7 @@ const combinations = [
     ['rollup'],
     ['rollup', 'nollup'],
     ['rollup', 'nollup', 'docker', 'static'],
+    ['rollup', 'nollup', 'tailwindcss', 'static'],
     ['snowpack'],
     ['rollup','i18n','navigation','content','miligram','mdsvex', 'auth']
 ]
