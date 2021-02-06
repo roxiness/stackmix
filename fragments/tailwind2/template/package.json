@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "cssnano": "^4.1.10",
+    "postcss": "latest",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "^4.1.0",
+    "postcss-cli": "latest",
+    "svelte-preprocess": "^4.6.6",
+    "tailwindcss": "latest",
+    "rollup-plugin-postcss": "latest"
+  }
+}
