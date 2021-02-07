@@ -19,5 +19,5 @@
 </div>
 
 <style>
-@import "/mobile.css";
+  __STYLE__
 </style>
