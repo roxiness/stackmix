@@ -1,4 +1,5 @@
 module.exports = {
+    dependencies: ['postcss'],
     configs: ({ getConfigString, getConfig, stringify }) => ({
         packagejson: require('./package.json'),
         autoPreprocess: {
