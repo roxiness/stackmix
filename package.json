@@ -30,6 +30,6 @@
     "svelte": "^3.31.2"
   },
   "dependencies": {
-    "canvasit": "^0.4.1"
+    "canvasit": "^0.4.2"
   }
 }
