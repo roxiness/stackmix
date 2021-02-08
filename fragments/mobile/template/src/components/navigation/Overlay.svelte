@@ -5,15 +5,23 @@
   $afterPageLoad(updateOverlay);
   $: (width || height) && updateOverlay();
 
-  function updateOverlay(target) {
-    const { x, y, width, height } = elHandle.getElementsByClassName("is-active")[0].getBoundingClientRect();
-    const movingOnY = parseInt(y) === parseInt(overlayElem.style.top);
+  function updateOverlay(node) {
+    const activeElem = elHandle.getElementsByClassName("is-active")[0];
+    const wasVisible = !overlayElem.style.display === "none";
 
-    overlayElem.style.transition = movingOnY && target ? "all 0.3s" : "none";
-    overlayElem.style.top = `${y}px`;
-    overlayElem.style.left = `${x}px`;
-    overlayElem.style.width = `${width}px`;
-    overlayElem.style.height = `${height}px`;
+    overlayElem.style.display = "none";
+
+    if (activeElem) {
+      overlayElem.style.display = null;
+      const { x, y, width, height } = activeElem.getBoundingClientRect();
+      const movingOnY = parseInt(y) === parseInt(overlayElem.style.top);
+
+      overlayElem.style.transition = movingOnY && node && wasVisible ? "all 0.3s" : "none";
+      overlayElem.style.top = `${y}px`;
+      overlayElem.style.left = `${x}px`;
+      overlayElem.style.width = `${width}px`;
+      overlayElem.style.height = `${height}px`;
+    }
   }
 </script>
 
