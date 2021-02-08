@@ -7,7 +7,7 @@
 
   function updateOverlay(node) {
     const activeElem = elHandle.getElementsByClassName("is-active")[0];
-    const wasVisible = !overlayElem.style.display === "none";
+    const wasVisible = overlayElem.style.display !== "none";
 
     overlayElem.style.display = "none";
 
@@ -15,7 +15,7 @@
       overlayElem.style.display = null;
       const { x, y, width, height } = activeElem.getBoundingClientRect();
       const movingOnY = parseInt(y) === parseInt(overlayElem.style.top);
-
+      console.log(movingOnY , node , wasVisible)
       overlayElem.style.transition = movingOnY && node && wasVisible ? "all 0.3s" : "none";
       overlayElem.style.top = `${y}px`;
       overlayElem.style.left = `${x}px`;
