@@ -3,10 +3,9 @@
   $: getClass = (path) => ($isActive(path) ? "active" : "");
 </script>
 
-<ul>
+<h3>Fragments</h3>
+<nav class="fragments">
   {#each $layout.children as { path, title }}
-    <li>
-      <a href={$url(path)} class={getClass(path)}> {title}</a>
-    </li>
+    <a href={$url(path)} class={getClass(path)}> {title}</a>
   {/each}
-</ul>
+</nav>
