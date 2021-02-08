@@ -4,6 +4,7 @@ const { resolve } = require('path')
 const combinations = [
     ['rollup'],
     ['rollup', 'nollup'],
+    ['rollup', 'nollup', 'static', 'vercel'],
     ['rollup', 'nollup', 'docker', 'static'],
     ['rollup', 'nollup', 'tailwindcss', 'static'],
     ['snowpack'],
