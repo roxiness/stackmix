@@ -6,10 +6,9 @@ import { terser } from 'rollup-plugin-terser';
 import { removeSync } from 'fs-extra'
 __IMPORTS__
 
-
 const assetsDir = 'public'
 const buildDir = `public/build`
-const production = !process.env.ROLLUP_WATCH;
+const production = process.env['NODE_ENV'] === 'production';
 __CONSTANTS__
 
 // clear previous builds

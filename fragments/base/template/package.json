@@ -14,7 +14,7 @@
     "serve": "run-p serve:*",
     "serve:spa": "spassr",
     "serve:ssr": "spassr --ssr --port 5005",
-    "build": "run-s build:*",
+    "build": "cross-env NODE_ENV=production run-s build:*",
     "build:routify": "routify -b",
     "test": "npm run test:dev && npm run test:build",
     "test:dev": "node test/wrapper dev ava test/{common,dev}/**/*.test.js",
@@ -26,7 +26,8 @@
     "fkill": "^7.1.0",
     "npm-run-all": "^4.1.5",
     "svelte": "^3.30.1",
-    "playwright": "^1.8.0"
+    "playwright": "^1.8.0",
+    "cross-env": "^7.0.3"
   },
   "routify": {
     "extensions": "svelte,html,svx,md"
