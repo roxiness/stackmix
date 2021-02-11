@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'feature',
     dependencies: ['autoPreprocess'],
     configs: ({ getConfig }) => ({
         packagejson: require('./package.json'),

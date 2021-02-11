@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'feature',
     configs: ({ getConfigString, getConfig, stringify }) => ({
         packagejson: require('./package.json'),
         svelte: {

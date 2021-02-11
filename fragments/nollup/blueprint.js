@@ -1,4 +1,7 @@
 module.exports = {
+    name: 'rollup + nollup',
+    type: 'bundler',
+    dependencies: ['rollup'],
     configs: ({ getConfig, stringify }) => ({
         svelte: {
             hot: 'isNollup',

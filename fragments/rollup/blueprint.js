@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'bundler',
     configs: ({ getConfigString, stringify }) => ({
         rollup: {
             preserveEntrySignatures: "false",

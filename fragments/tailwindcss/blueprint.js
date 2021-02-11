@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'feature',
     dependencies: ['postcss'],
     configs: ({ getConfigString, getConfig, stringify }) => ({
         packagejson: require('./package.json'),
@@ -24,5 +25,10 @@ module.exports = {
                 'require("postcss-import")',
             ]
         },
-    })
+    }),
+    events: {
+        beforeConfig(ctx){
+            ctx.prompt
+        }
+    }
 }

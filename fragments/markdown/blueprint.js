@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'feature',
     configs: ({ getConfig, getConfigString, stringify }) => ({
         packagejson: {
             devDependencies: {

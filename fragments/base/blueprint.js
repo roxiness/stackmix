@@ -1,4 +1,5 @@
 module.exports = {
+    type: 'base',
     configs: ({ getConfig, stringify }) => ({
         svelte: {
             dev: "!production", // run-time checks      
