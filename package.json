@@ -13,23 +13,13 @@
   },
   "author": "",
   "license": "ISC",
-  "canvasit": {
-    "basepath": "fragments",
-    "@exec": "npm install && npm dev",
-    "ignore": [
-      "node_modules",
-      "dist",
-      ".routify"
-    ],
-    "include": [
-      "base"
-    ]
-  },
   "devDependencies": {
     "prettier-plugin-svelte": "^2.1.0",
     "svelte": "^3.31.2"
   },
   "dependencies": {
-    "canvasit": "^0.4.2"
+    "canvasit": "^0.4.2",
+    "enquirer": "^2.3.6",
+    "prompts": "^2.4.0"
   }
 }
