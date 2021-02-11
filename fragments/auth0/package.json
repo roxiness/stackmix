@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "nollup": "^0.14.4",
+    "@auth0/auth0-spa-js": "^1.13.6"
+  }
+}
