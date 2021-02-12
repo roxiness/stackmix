@@ -11,7 +11,7 @@
    * @param node the node being navigated to
    */
   function updateOverlayPosition(node) {
-    const activeElem = elHandle.getElementsByClassName("is-active")[0];
+    const activeElem = elHandle && elHandle.getElementsByClassName("is-active")[0];
 
     if (activeElem) {
       const wasVisible = overlayElem.style.display !== "none";
@@ -26,7 +26,7 @@
       overlayElem.style.left = `${x}px`;
       overlayElem.style.width = `${width}px`;
       overlayElem.style.height = `${height}px`;
-    } else {
+    } else if (overlayElem) {
       // hide the overlay if there's no active link
       overlayElem.style.display = "none";
     }
