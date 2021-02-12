@@ -1,3 +1,5 @@
+const { init } = require('./lib/init')
+
 module.exports = {
     "basepath": "fragments",
     "ignore": [
@@ -8,7 +10,5 @@ module.exports = {
     "include": [
         "base"
     ],
-    hooks: {
-        init: require('./lib/selectFragments').selectFragments
-    }
+    hooks: { init }
 }
