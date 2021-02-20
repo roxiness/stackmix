@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "svelte-windicss-preprocess": "^2.1.3"
+  }
+}
