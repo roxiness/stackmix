@@ -12,7 +12,7 @@ module.exports = {
             }
         }
     }),
-    events: {
+    hooks: {
         afterPatch: ctx => {
             ctx.writeTo('package.json', JSON.stringify(ctx.configs.packagejson, null, 2))
         }

@@ -26,7 +26,7 @@ module.exports = {
             ]
         },
     }),
-    events: {
+    hooks: {
         beforeConfig(ctx){
             ctx.prompt
         }

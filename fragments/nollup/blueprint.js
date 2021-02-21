@@ -18,7 +18,7 @@ module.exports = {
         },
         packagejson: require('./template/package.json')
     }),
-    events: {
+    hooks: {
         afterPatch: (({ transform }) => {
             transform('rollup.config.js', str => str.replace(/.*import svelte from.*/, ''))
         })
