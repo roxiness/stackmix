@@ -8,6 +8,10 @@ module.exports = {
         terser: ['rollup-plugin-terser', 'terser'],
     },
     configs: ({ getConfigString, $require }) => ({
+        rollupResolve: {
+            browser: "true",
+            dedupe: "importee => !!importee.match(/svelte(\\/|$)/)"
+        },
         rollup: {
             preserveEntrySignatures: "false",
             input: ["`src/main.js`"],
@@ -22,10 +26,7 @@ module.exports = {
                 $require('svelte')(getConfigString('svelte')),
 
                 // resolve matching modules from current working directory
-                $require('resolve')`{
-                    browser: "true",
-                    dedupe: "importee => !!importee.match(/svelte(\/|$)/)"
-                }`,
+                $require('resolve')(getConfigString('rollupResolve')),
                 $require('commonjs')(),
 
                 `production && ${$require('terser')()}`,
