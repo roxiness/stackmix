@@ -1,7 +1,11 @@
 module.exports = {
     type: 'feature',
     dependencies: ['postcss'],
-    configs: ({ getConfigString, getConfig, stringify }) => ({
+    imports: {
+        tailwind: ['tailwindcss'],
+        postcssImport: ['postcss-import']
+    },
+    configs: ({ getConfigString, getConfig, $require }) => ({
         packagejson: require('./package.json'),
         autoPreprocess: {
             postcss: getConfig('postcss')
@@ -10,24 +14,24 @@ module.exports = {
         tailwindcss: {
             darkMode: "'class'",
             future: {
-              removeDeprecatedGapUtilities: "true",
-              purgeLayersByDefault: "true",
+                removeDeprecatedGapUtilities: "true",
+                purgeLayersByDefault: "true",
             },
             plugins: [],
             purge: {
-              content: ["'./src/**/*.svelte'"],
-              enabled: "production",
+                content: ["'./src/**/*.svelte'"],
+                enabled: "production",
             },
         },
         postcss: {
             plugins: [
-                `require("tailwindcss")(${getConfigString('tailwindcss')})`,
-                'require("postcss-import")',
+                $require('tailwind')(getConfigString('tailwindcss')),
+                $require("postcssImport") + '', //we want a string, not a function
             ]
         },
     }),
     hooks: {
-        beforeConfig(ctx){
+        beforeConfig(ctx) {
             ctx.prompt
         }
     }
