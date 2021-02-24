@@ -1,8 +1,3 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
 import { removeSync } from 'fs-extra'
 __IMPORTS__
 
@@ -19,3 +14,5 @@ __FUNCTIONS__
 
 
 export default __CONFIG__
+
+__ESM__

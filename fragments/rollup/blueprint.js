@@ -1,6 +1,13 @@
 module.exports = {
     type: 'bundler',
-    configs: ({ getConfigString, stringify }) => ({
+    imports: {
+        svelte: ['rollup-plugin-svelte'],
+        resolve: ['@rollup/plugin-node-resolve'],
+        commonjs: ['@rollup/plugin-commonjs'],
+        livereload: ['rollup-plugin-livereload'],
+        terser: ['rollup-plugin-terser', 'terser'],
+    },
+    configs: ({ getConfigString, $require }) => ({
         rollup: {
             preserveEntrySignatures: "false",
             input: ["`src/main.js`"],
@@ -12,17 +19,17 @@ module.exports = {
                 chunkFileNames: "`[name]${production && '-[hash]' || ''}.js`"
             },
             plugins: [
-                `svelte(${getConfigString('svelte')})`,
+                $require('svelte')(getConfigString('svelte')),
 
                 // resolve matching modules from current working directory
-                `resolve({
+                $require('resolve')`{
                     browser: "true",
                     dedupe: "importee => !!importee.match(/svelte(\/|$)/)"
-                })`,
-                "commonjs()",
+                }`,
+                $require('commonjs')(),
 
-                `production && terser()`,
-                `!production && livereload(assetsDir), // refresh entire window when code is updated`,
+                `production && ${$require('terser')()}`,
+                `!production && ${$require('livereload')('assetsDir')}`, // refresh entire window when code is updated`,
             ],
             watch: { clearScreen: "false" }
         },
