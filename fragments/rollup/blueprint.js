@@ -1,3 +1,6 @@
+// @ts-check
+
+/** @type {import('canvasit')['Blueprint']} */
 module.exports = {
     type: 'bundler',
     imports: {
