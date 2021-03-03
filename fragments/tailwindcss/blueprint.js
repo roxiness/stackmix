@@ -26,7 +26,7 @@ module.exports = {
         postcss: {
             plugins: [
                 $require('tailwind')(getConfigString('tailwindcss')),
-                $require("postcssImport") + '', //we want a string, not a function
+                $require("postcssImport")
             ]
         },
     }),
