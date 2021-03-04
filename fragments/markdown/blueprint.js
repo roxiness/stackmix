@@ -1,6 +1,10 @@
 module.exports = {
     type: 'feature',
-    configs: ({ getConfig, getConfigString, stringify }) => ({
+    imports: {
+        mdsvex: ['mdsvex', 'mdsvex'],
+        slug: ['remark-slug']
+    },
+    configs: ({ getConfigString, $require }) => ({
         packagejson: {
             devDependencies: {
                 mdsvex: '^0.8.9',
@@ -16,12 +20,11 @@ module.exports = {
         },
         svelte: {
             extensions: ["'.md'", "'.svelte'"],
-            preprocess: [
-                `mdsvex(${getConfigString('mdsvex')})`
+            preprocess: [$require('mdsvex')(getConfigString('mdsvex'))
             ]
         },
         mdsvex: {
-            remarkPlugins: ['slug'],
+            remarkPlugins: [$require('slug')],
             layout: {
                 blog: "'src/components/Card.svelte'"
             },
