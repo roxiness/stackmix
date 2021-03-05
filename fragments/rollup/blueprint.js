@@ -10,7 +10,11 @@ module.exports = {
         livereload: ['rollup-plugin-livereload'],
         terser: ['rollup-plugin-terser', 'terser'],
     },
-    configs: ({ getConfigString, $require }) => ({
+    configs: ({ getConfigString, $require }) => ({        
+        test: {
+            domain: "'localhost'",
+            port: "5000"
+        },
         rollupResolve: {
             browser: "true",
             dedupe: "importee => !!importee.match(/svelte(\\/|$)/)"

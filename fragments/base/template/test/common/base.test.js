@@ -5,10 +5,10 @@
  */
 
 const test = require('ava')
-const { pageMacro } = require('../pageMacro')
+const { pageMacro, baseUrl } = require('../lib')
 
 test('can see frontpage', pageMacro, async (t, page) => {
-    await page.goto('http://localhost:5000/')
+    await page.goto(baseUrl)
     t.assert(await page.waitForSelector('main'))
 })
 
