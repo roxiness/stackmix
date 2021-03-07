@@ -1,6 +1,9 @@
 module.exports.patch = ({ placeholders }) => {
     placeholders.head.push(`
-    <!-- Google Fonts -->
+
+<!-- added by milligram -->
+
+<!-- Google Fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 
 <!-- CSS Reset -->
@@ -9,6 +12,6 @@ module.exports.patch = ({ placeholders }) => {
 <!-- Milligram CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 
-<!-- You should properly set the path from the main file. -->
+<!-- /added by milligram -->
     `)
 }
