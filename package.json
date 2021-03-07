@@ -9,7 +9,7 @@
     "generate": "canvasit -output output",
     "test:output:dev": "cd output && npm run test:dev",
     "test:output:build": "cd output && npm run test:build",
-    "build": "node generate"
+    "build": "node lib/generate-combos"
   },
   "author": "",
   "license": "ISC",
