@@ -1,4 +1,4 @@
-<h1>Windicss</h1>
+<h3>Windicss</h3>
 <p class="bg-red-500">Check my style...</p>
 
 <style>
