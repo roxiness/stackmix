@@ -1,11 +1,7 @@
-<script>
-  import { url, isActive, layout } from "@roxi/routify";
-  $: getClass = (path) => ($isActive(path) ? "active" : "");
-</script>
+<h3>What's a fragment?</h3>
 
-<h3>Fragments</h3>
-<nav class="fragments">
-  {#each $layout.children as { path, title }}
-    <a href={$url(path)} class={getClass(path)}> {title}</a>
-  {/each}
-</nav>
+<p>A fragment is a template-component. By combining fragments, you can compose your own starter template.</p>
+
+<p>To see what's included in this template, have a look at the fragments to the left.</p>
+
+<strong>You can remove this guide by deleting the <code>src/pages/guide</code> folder.</strong>
