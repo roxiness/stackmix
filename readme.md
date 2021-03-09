@@ -27,112 +27,90 @@ $ npm install
 
 ## Available fragments (in alphabetical order)
 
-<details>
-<summary>auth</summary>
- Simple authentication template. You can set up a guard in `_layout` or `_reset` with `$user` from the provided authentication store. Implement your own authentication with just a few calls to the database or an API.
-</details>
+### auth
 
-<details>
-<summary>autoPreprocess</summary>
+Simple authentication template. You can set up a guard in `_layout` or `_reset` with `$user` from the provided authentication store. Implement your own authentication with just a few calls to the database or an API.
+
+### autoPreprocess
+
 Adds svelte-preprocess
-</details>
 
-<details>
-<summary>base</summary>
-This is the actual scaffold of a Routify application. It sets you up for development with some testing included. You get some default layouts, 404 and a few basic routes to start with. 
-</details>
+### base
 
-<details>
-<summary>content</summary>
+This is the actual scaffold of a Routify application. It sets you up for development with some testing included. You get some default layouts, 404 and a few basic routes to start with.
+
+### content
+
 Brings some content to life and show how to use parameters with Routify.
-</details>
 
-<details>
-<summary>docker-nginx</summary>
-Allows for running your app with Docker 
-</details>
+### docker-nginx
 
-<details>
-<summary>docker-ssr</summary>
-Allows for running your SSR built app with Docker 
-</details>
+Allows for running your app with Docker
 
-<details>
-<summary>i18n</summary>
-Sets up a basic translation store 
-</details>
+### docker-ssr
 
-<details>
-<summary>markdown</summary>
-Includes __mdsvex__ and other the dependencies for markdown rendering
-</details>
+Allows for running your SSR built app with Docker
 
-<details>
-<summary>milligram</summary>
+### i18n
+
+Sets up a basic translation store
+
+### markdown
+
+Includes **mdsvex** and other the dependencies for markdown rendering
+
+### milligram
+
 Milligram is a lightweight CSS framework
-</details>
 
-<details>
-<summary>mobile</summary>
-Adds CSS for mobile devices, depends on __milligram__
-</details>
+### mobile
 
-<details>
-<summary>navigation</summary>
+Adds CSS for mobile devices, depends on **milligram**
+
+### navigation
+
 Adds navigation drawer and generates a menu from project pages
-</details>
 
-<details>
-<summary>nollup</summary>
+### nollup
+
 Nollup is Rollup compatible bundler for development, allowing for quick HMR.
-</details>
 
-<details>
-<summary>postcss</summary>
-Adds PostCSS to config, to be used in your code or CSS framworks like TailwindCSS 
-</details>
+### postcss
 
-<details>
-<summary>pwa</summary>
+Adds PostCSS to config, to be used in your code or CSS framworks like TailwindCSS
+
+### pwa
+
 This fragments adds a Service Worker to your app for instant conversion to PWA. Includes Workbox, manifest.json & logos
-</details>
 
-<details>
-<summary>rollup</summary>
+### rollup
+
 Rollup is a default bundler for Svelte apps and is the most stable option.
-</details>
 
-<details>
-<summary>single-page</summary>
+### single-page
+
 Facilitates Navigational scrolling - not to be confused with single page application
-</details>
 
-<details>
-<summary>snowpack</summary>
+### snowpack
+
 Snowpack is alternative bundler, quicker than rollup
-</details>
 
-<details>
-<summary>static</summary>
+### static
+
 Adds Spank, the Static Site Generator (SSG, to export HTML pages from your SPA
-</details>
 
-<details>
-<summary>svite</summary>
-Svite adds support for ViteJS, the extremely quick developer server which skips bundling and uses modules instead. 
-</details>
+### svite
 
-<details>
-<summary>tailwindcss</summary>
+Svite adds support for ViteJS, the extremely quick developer server which skips bundling and uses modules instead.
+
+### tailwindcss
+
 TailwindCSS is extremely popular utility CSS framework. This fragment depends on **postcss** fragment.
-</details>
 
-<details>
-<summary>vercel</summary>
+### vercel
+
 Prepares you app for easy deploy with Vercel
-</details>
-<details>
 
-<summary>windicss</summary>
+### windicss
+
 WindiCSS is alternative compiler for TailwindCSS config. Quicker than native TailwindCSS via PostCSS, still in early development stages.
-</details>
