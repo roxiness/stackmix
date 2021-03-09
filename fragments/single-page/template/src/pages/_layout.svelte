@@ -1,5 +1,9 @@
 <script>
   import { components, beforeUrlChange, afterPageLoad, page } from "@roxi/routify";
+  __SCRIPT__;
+
+  
+
   __IMPORTS__;
 
   __CONSTANTS__;
@@ -21,6 +25,7 @@ __HTML__
 </main>
 
 <nav>
+  __NAVIGATION__
   {#each $components.find((n) => n.path === "/frontpage").children as node}
     <a href="/#{node.title}">{node.title}</a>
   {/each}
