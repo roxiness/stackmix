@@ -1,16 +1,16 @@
 module.exports = {
     type: 'base',
-    configs: ({ getConfig, stringify }) => ({
+    configs: () => ({
+        test: {},
         svelte: {
-            dev: "!production", // run-time checks      
             // Extract component CSS — better performance
             // css: "css => css.write(`bundle.css`)",
             preprocess: []
         },
-        packagejson: require('./template/package.json')
+        packagejson: require('./package.json')
     }),
     hooks: {
-        afterPatch: ctx=>{
+        afterPatch: ctx => {
             ctx.writeTo('package.json', JSON.stringify(ctx.configs.packagejson, null, 2))
         }
     }
