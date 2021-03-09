@@ -2,10 +2,7 @@ module.exports = {
     name: 'rollup + nollup',
     type: 'bundler',
     dependencies: ['rollup'],
-    configs: ({ getConfig, stringify }) => ({
-        svelte: {
-            hot: 'isNollup',
-        },
+    configs: () => ({
         rollup: {
             plugins: [
                 `!production && isNollup && Hmr({ inMemory: true, public: assetsDir, }), // refresh only updated code`,
