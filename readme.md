@@ -33,7 +33,7 @@ Simple authentication template. You can set up a guard in `_layout` or `_reset` 
 
 ### autoPreprocess
 
-Adds svelte-preprocess
+Adds svelte-preprocess.
 
 ### base
 
@@ -41,35 +41,35 @@ This is the actual scaffold of a Routify application. It sets you up for develop
 
 ### content
 
-Brings some content to life and show how to use parameters with Routify.
+Brings some content to life and shows how to use parameters with Routify.
 
 ### docker-nginx
 
-Allows for running your app with Docker
+Allows for running your app with Docker.
 
 ### docker-ssr
 
-Allows for running your SSR built app with Docker
+Allows for running your SSR built app with Docker.
 
 ### i18n
 
-Sets up a basic translation store
+Sets up a basic translation store.
 
 ### markdown
 
-Includes **mdsvex** and other dependencies for markdown rendering
+Includes **mdsvex** and other dependencies for markdown rendering.
 
 ### milligram
 
-Milligram is a lightweight CSS framework
+Milligram is a lightweight CSS framework.
 
 ### mobile
 
-Adds CSS for mobile devices, depends on **milligram**
+Adds CSS for mobile devices, depends on **milligram**.
 
 ### navigation
 
-Adds navigation drawer and generates a menu from project pages
+Adds navigation drawer and generates a menu from project pages.
 
 ### nollup
 
@@ -77,11 +77,11 @@ Nollup is Rollup compatible bundler for development, allowing for quick HMR.
 
 ### postcss
 
-Adds PostCSS to config, to be used in your code or CSS framworks like TailwindCSS
+Adds PostCSS to config, to be used in your code or CSS framworks like TailwindCSS.
 
 ### pwa
 
-This fragments adds a Service Worker to your app for instant conversion to PWA. Includes Workbox, manifest.json & logos
+This fragments adds a Service Worker to your app for instant conversion to PWA. Includes Workbox, manifest.json & logos.
 
 ### rollup
 
@@ -89,15 +89,15 @@ Rollup is a default bundler for Svelte apps and is the most stable option.
 
 ### single-page
 
-Facilitates Navigational scrolling - not to be confused with single page application
+Facilitates Navigational scrolling - not to be confused with single page application.
 
 ### snowpack
 
-Snowpack is alternative bundler, quicker than rollup
+Snowpack is alternative bundler, quicker than rollup.
 
 ### static
 
-Adds Spank, the Static Site Generator (SSG, to export HTML pages from your SPA
+Adds Spank, the Static Site Generator (SSG, to export HTML pages from your SPA.
 
 ### svite
 
@@ -109,7 +109,7 @@ TailwindCSS is extremely popular utility CSS framework. This fragment depends on
 
 ### vercel
 
-Prepares your app for easy deploy with Vercel
+Prepares your app for easy deploy with Vercel.
 
 ### windicss
 
