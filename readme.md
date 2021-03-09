@@ -57,7 +57,7 @@ Sets up a basic translation store
 
 ### markdown
 
-Includes **mdsvex** and other the dependencies for markdown rendering
+Includes **mdsvex** and other dependencies for markdown rendering
 
 ### milligram
 
@@ -109,7 +109,7 @@ TailwindCSS is extremely popular utility CSS framework. This fragment depends on
 
 ### vercel
 
-Prepares you app for easy deploy with Vercel
+Prepares your app for easy deploy with Vercel
 
 ### windicss
 
