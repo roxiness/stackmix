@@ -1,4 +1,4 @@
 module.exports = {
     type: 'template',
-    dependencies: ['miligram']
+    dependencies: ['milligram']
 }
