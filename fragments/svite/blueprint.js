@@ -2,7 +2,10 @@
 
 /** @type {import('canvasit')['Blueprint']} */
 module.exports = {
-    imports: {'svelte': ['@svitejs/vite-plugin-svelte']},
+    imports: {
+        svelte: ['@svitejs/vite-plugin-svelte'],
+        resolve: ['path', 'resolve']
+    },
     type: 'bundler',
     configs: ({ getConfigString, $require }) => ({
         packagejson: require('./package.json'),
@@ -11,8 +14,18 @@ module.exports = {
             hot: '!production',
         },
         vite: {
+            build: {
+                polyfillDynamicImport: "false",
+                cssCodeSplit: "false"
+            },
             optimizeDeps: {
                 exclude: ["'@roxi/routify'"]
+            },
+            resolve: {
+                dedupe: ["'@roxi/routify'"],
+                alias: {
+                    svelte: $require('resolve')(`__dirname, "node_modules/svelte"`),
+                },
             },
             plugins: [
                 $require('svelte')(getConfigString('svelte'))
@@ -20,9 +33,14 @@ module.exports = {
         }
     }),
     hooks: {
+        afterConfig: ctx => {
+            delete(ctx.configs.packagejson.spassr)
+            delete(ctx.configs.packagejson.spank)
+        },
         afterPatch: ctx => {
+            ctx.removeFile('public/__app.html')
             const sviteParts = ctx.parseImports(ctx.stringify(ctx.configs.vite))
-            ctx.writeTo('vite.config.js',`
+            ctx.writeTo('vite.config.js', `
                     ${sviteParts.imports.join('\n')}
                     ${sviteParts.declarations.join('\n')}
                     const production = process.env.NODE_ENV === 'production'
