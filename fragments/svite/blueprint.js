@@ -14,6 +14,9 @@ module.exports = {
             hot: '!production',
         },
         vite: {
+            server: {
+                port: "5000"
+            },
             build: {
                 polyfillDynamicImport: "false",
                 cssCodeSplit: "false"
@@ -34,11 +37,11 @@ module.exports = {
     }),
     hooks: {
         afterConfig: ctx => {
-            delete(ctx.configs.packagejson.spassr)
-            delete(ctx.configs.packagejson.spank)
+            delete (ctx.configs.packagejson.spassr)
+            delete (ctx.configs.packagejson.spank)
         },
         afterPatch: ctx => {
-            ctx.removeFile('public/__app.html')
+            ctx.moveFile('public/__app.html', 'index.html')
             const sviteParts = ctx.parseImports(ctx.stringify(ctx.configs.vite))
             ctx.writeTo('vite.config.js', `
                     ${sviteParts.imports.join('\n')}
