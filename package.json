@@ -7,6 +7,7 @@
     "dev": "canvasit --watch -output output",
     "help": "canvasit help",
     "generate": "canvasit -output output",
+    "test": "node test",
     "test:output:dev": "cd output && npm run test:dev",
     "test:output:build": "cd output && npm run test:build",
     "build": "node lib/generate-combos"
