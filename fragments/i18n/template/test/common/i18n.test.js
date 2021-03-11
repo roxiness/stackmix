@@ -5,7 +5,7 @@
  */
 
 const test = require('ava')
-const { pageMacro } = require('../pageMacro')
+const { pageMacro } = require('../lib')
 
 
 test('default page shows English content', pageMacro, async (t, page) => {

@@ -5,7 +5,7 @@
  */
 
 const test = require('ava')
-const { pageMacro } = require('../pageMacro')
+const { pageMacro } = require('../lib')
 
 
 test('can see frontpage', pageMacro, async (t, page) => {

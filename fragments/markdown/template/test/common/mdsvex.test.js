@@ -5,7 +5,7 @@
  */
 
 const test = require('ava')
-const { pageMacro } = require('../pageMacro')
+const { pageMacro } = require('../lib')
 
 
 test('can view a markdown page', pageMacro, async (t, page) => {
