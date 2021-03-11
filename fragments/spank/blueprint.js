@@ -1,6 +1,7 @@
 module.exports = {
+    name: 'Spank (Static Site Generator)',
     type: 'feature',
     configs: ({ getConfig, stringify }) => ({
-        packagejson: require('./template/package.json')
+        packagejson: require('./package.json')
     })
 }
