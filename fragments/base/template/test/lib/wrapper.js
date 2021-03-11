@@ -1,7 +1,7 @@
 const { spawnSync, spawn } = require('child_process')
 const { checkPort, wait } = require('./')
 const fkill = require('fkill')
-const { port } = require('./config')
+const { port } = require('../../package.json').appConfig
 
 const npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm'
 const npx = /^win/.test(process.platform) ? 'npx.cmd' : 'npx'
