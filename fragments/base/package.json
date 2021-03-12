@@ -37,6 +37,7 @@
     "You can delete the field and this comment, if you use neither."
   ],
   "appConfig": {
+    "distDir": "dist",
     "assets": "public",
     "script": "public/build/main.js",
     "template": "public/__app.html",
