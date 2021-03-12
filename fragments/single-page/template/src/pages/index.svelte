@@ -11,15 +11,15 @@
    * Normally Routify emits an `app-loaded` event, when the page component has
    * been loaded. Since we're loading additional pages as inlined components, we
    * want to delay this event by calling `$ready` after the components have
-   * loaded. Whenever `$ready` is present in a component, Routify will delay the
-   * `app-loaded` event till $ready has been called.
+   * loaded. Whenever `$ready` is used in a component, Routify will delay the
+   * `app-loaded` event till `$ready()` has been called.
    */
   const preloadPromises = nodes.map((node) => node.preload());
   Promise.all(preloadPromises).then($ready);
 </script>
 
 <div class="pages">
-  <!-- iterate through each layout & page  component nested in `/frontpage` -->
+  <!-- iterate through each layout & page component nested in `/frontpage` -->
   {#each nodes as node, index}
     <!-- in case the component is a layout, we also want its nested index.
       For this we use `componentsWithIndex`. This will return [layout, page]
