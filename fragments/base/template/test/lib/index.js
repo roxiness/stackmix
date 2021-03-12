@@ -65,11 +65,26 @@ const pageMacro = (() => {
     return `http://${domain}:${port}/`
   }
   
+  /**
+   * returns absolute path from project-relative path
+   * @param  {...string} path 
+   * @returns {string}
+   */
+  function resolve(...path) {
+    return require('path').resolve(__dirname, '..', '..', ...path)
+  }
   
+  function getPkgJson() {
+    return require(resolve('package.json'))
+  }
+
   module.exports = {
     baseUrl: getBaseUrl(),
     checkPort,
     wait,
     pageMacro,
+    resolve,
+    get pkgJson() { return getPkgJson() },
+    get appConfig() { return getPkgJson().appConfig }
   }
   
