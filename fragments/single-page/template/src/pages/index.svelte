@@ -1,25 +1,37 @@
 <script>
-  import { layout, ready, components } from "@roxi/routify";
+  import { ready, components } from "@roxi/routify";
 
-  // we want the nodes nested in the `/frontpage` folder
+  /**
+   * $components returns all pages and layouts indexed by Routify. We want
+   * all layouts and pages nested in the /frontpage folder
+   */
   const nodes = $components.find((n) => n.path === "/frontpage").children;
 
-  // we delay the ready state of our app 
-  // till all our inlined components have been loaded
+  /**
+   * Normally Routify emits an `app-loaded` event, when the page component has
+   * been loaded. Since we're loading additional pages as inlined components, we
+   * want to delay this event by calling `$ready` after the components have
+   * loaded. Whenever `$ready` is present in a component, Routify will delay the
+   * `app-loaded` event till $ready has been called.
+   */
   const preloadPromises = nodes.map((node) => node.preload());
   Promise.all(preloadPromises).then($ready);
 </script>
 
 <div class="pages">
+  <!-- iterate through each layout & page  component nested in `/frontpage` -->
   {#each nodes as node, index}
-  <!-- componentWithIndex also returns an `index.svelte` file if one exists -->
-    {#await node.componentWithIndex then [Cmp, Index]}
+    <!-- in case the component is a layout, we also want its nested index.
+      For this we use `componentsWithIndex`. This will return [layout, page]
+      if our component is a layout and [page] if its a page. -->
+    {#await node.componentWithIndex then [Cmp, IndexCmp]}
+      <!-- let's add a subtle background to every other page -->
       <div class="page" class:uneven={index % 2} id={node.title}>
         <div class="container">
-          <!-- layout or page -->
+          <!-- render the component -->
           <svelte:component this={Cmp}>
-            <!-- index if Cmp is layout. Can be removed if not needed. -->
-            <svelte:component this={Index} />
+            <!-- if the component is a layout, we will also render its index -->
+            <svelte:component this={IndexCmp} />
           </svelte:component>
         </div>
       </div>
