@@ -4,7 +4,8 @@
 module.exports = {
     imports: {
         svelte: ['@svitejs/vite-plugin-svelte'],
-        resolve: ['path', 'resolve']
+        resolve: ['path', 'resolve'],
+        port: ['./package.json', 'appConfig', 'port']
     },
     type: 'bundler',
     configs: ({ getConfigString, $require }) => ({
@@ -15,7 +16,7 @@ module.exports = {
         },
         vite: {
             server: {
-                port: "5000"
+                port: $require('port')
             },
             build: {
                 polyfillDynamicImport: "false",
@@ -37,11 +38,12 @@ module.exports = {
     }),
     hooks: {
         afterConfig: ctx => {
+            delete (ctx.configs.packagejson.appConfig.script)
             delete (ctx.configs.packagejson.spassr)
             delete (ctx.configs.packagejson.spank)
         },
         afterPatch: ctx => {
-            ctx.moveFile('public/__app.html', 'index.html')
+            ctx.moveFile('static/__app.html', 'index.html')
             const sviteParts = ctx.parseImports(ctx.stringify(ctx.configs.vite))
             ctx.writeTo('vite.config.js', `
                     ${sviteParts.imports.join('\n')}

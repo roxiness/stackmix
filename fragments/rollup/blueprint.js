@@ -9,6 +9,8 @@ module.exports = {
         commonjs: ['@rollup/plugin-commonjs'],
         livereload: ['rollup-plugin-livereload'],
         terser: ['rollup-plugin-terser', 'terser'],
+        buildDir: ['./package.json', 'appConfig', 'buildDir'],
+        distDir: ['./package.json', 'appConfig', 'distDir']
     },
     configs: ({ getConfigString, $require }) => ({        
         test: {
@@ -25,7 +27,7 @@ module.exports = {
             output: {
                 sourcemap: "true",
                 format: "'esm'",
-                dir: "buildDir",
+                dir: $require('buildDir'),
                 // for performance, disabling filename hashing in development
                 chunkFileNames: "`[name]${production && '-[hash]' || ''}.js`"
             },
@@ -37,7 +39,7 @@ module.exports = {
                 $require('commonjs')(),
 
                 `production && ${$require('terser')()}`,
-                `!production && ${$require('livereload')('assetsDir')}`, // refresh entire window when code is updated`,
+                `!production && ${$require('livereload')($require('distDir'))} , // refresh entire window when code is updated`, 
             ],
             watch: { clearScreen: "false" }
         },

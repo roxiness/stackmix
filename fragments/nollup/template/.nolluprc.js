@@ -1,8 +1,5 @@
+__IMPORTS__
 
-module.exports = {
-    hot: true,
-    contentBase: 'public',
-    publicPath: 'build',
-    historyApiFallback: '__app.html',
-    port: 5000
-}
+__CONSTANTS__
+
+module.exports = __CONFIG__

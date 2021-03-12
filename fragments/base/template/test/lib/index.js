@@ -61,8 +61,8 @@ async function checkPort(port, timeout) {
  * @returns {string}
  */
 function getBaseUrl() {
-  const { domain, port } = require('./config')
-  return `http://${domain}:${port}/`
+  const {  port } = require('../../package.json').appConfig
+  return `http://127.0.0.1:${port}/`
 }
 
 /**

@@ -37,25 +37,17 @@
     "You can delete the field and this comment, if you use neither."
   ],
   "appConfig": {
+    "port": 5000,
+    "assetsDir": "static",
+    "template": "static/__app.html",
     "distDir": "dist",
-    "assets": "public",
-    "script": "public/build/main.js",
-    "template": "public/__app.html",
-    "port": 5000
+    "buildDir": "dist/build",
+    "script": "dist/build/main.js"
   },
   "spassr": {
-    "assetsDir": [
-      "public"
-    ],
-    "entrypoint": "public/__app.html",
-    "script": "public/build/main.js",
     "ssrOptions": {
       "inlineDynamicImports": true
     }
-  },
-  "spank": {
-    "entrypoint": "public/__app.html",
-    "script": "public/build/main.js"
   },
   "ava": {
     "verbose": true
