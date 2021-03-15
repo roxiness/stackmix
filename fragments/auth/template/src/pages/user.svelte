@@ -6,3 +6,10 @@
 
 <button on:click={logout}>Logout</button>
 <!-- routify:options index=false -->
+
+<style>
+  button {
+    position: relative;
+    z-index: 1;
+  }
+</style>
