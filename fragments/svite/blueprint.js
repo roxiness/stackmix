@@ -44,6 +44,7 @@ module.exports = {
         },
         afterPatch: ctx => {
             ctx.moveFile('static/__app.html', 'index.html')
+            ctx.moveFile('static', 'public')
             const sviteParts = ctx.parseImports(ctx.stringify(ctx.configs.vite))
             ctx.writeTo('vite.config.js', `
                     ${sviteParts.imports.join('\n')}
