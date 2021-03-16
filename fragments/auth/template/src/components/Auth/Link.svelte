@@ -1,11 +1,12 @@
 <script>
-  import { user } from "./store";
+  import { user, authenticating } from "./store";
   import { url } from "@roxi/routify";
 </script>
-
 <ul>
   <li>
-    {#if $user}
+    {#if $authenticating}
+      authenticating...
+    {:else if $user}
       <a href={$url("/user")}>{$user.username}</a>
     {:else}
       <a href={$url("/login")}>Login</a>
@@ -20,7 +21,7 @@
   }
   ul.root:hover ul.nested {
     display: block;
-  }  
+  }
   li {
     margin-left: 6px;
     list-style: none;

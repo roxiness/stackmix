@@ -1,7 +1,14 @@
 <script>
   import Login from "../../components/Auth/Login.svelte";
   import { authenticating, user, logout } from "../../components/Auth/store.js";
-  import { url } from "@roxi/routify";
+  import { url, ready } from "@roxi/routify";
+
+  /**
+   * We don't want SSR for the content of protected pages. If we did,
+   * `$ready()` should be called if the user failed to authenticate.
+   * Otherwise Routify will wait indefinitely for `<slot />` to load.
+   * */
+  $: if (!$authenticating && !$user) $ready();
 </script>
 
 <div class="protected">
@@ -36,6 +43,6 @@
   button {
     position: absolute;
     right: 16px;
-    top: 16px
+    top: 16px;
   }
 </style>
