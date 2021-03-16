@@ -1,5 +1,5 @@
 <script>
-  import { components, beforeUrlChange, afterPageLoad, page } from "@roxi/routify";
+  import { components, beforeUrlChange, layout, page, url } from "@roxi/routify";
   __SCRIPT__;
 
   __IMPORTS__;
@@ -28,7 +28,10 @@ __HTML__
     {#each $components.find((n) => n.path === "/frontpage").children as node}
       <a href="/#{node.title}">{node.title}</a>
     {/each}
-    <a href="/guide">guide</a>
+    |
+    {#each $layout.children as node}
+       <a href={$url(node.path)}>{node.title}</a>
+    {/each}
     __NAVIGATIONMIDDLE__
   </div>
   <div class="nav last">__NAVIGATIONLAST__</div>
