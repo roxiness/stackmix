@@ -6,13 +6,15 @@
   const handleSubmit = () => login(username, password);
 </script>
 
-<h3>Login</h3>
-<form on:submit|preventDefault={handleSubmit}>
-  <input type="text" bind:value={username} />
-  <input type="password" bind:value={password} />
-  {#if !$authenticating && !$user}
-    <input type="submit" />
-  {:else}
-    authenticating...
-  {/if}
-</form>
+<div class="container">
+  <h3>Login</h3>
+  <form on:submit|preventDefault={handleSubmit}>
+    <input type="text" bind:value={username} />
+    <input type="password" bind:value={password} />
+    {#if !$authenticating && !$user}
+      <input type="submit" />
+    {:else}
+      authenticating...
+    {/if}
+  </form>
+</div>
