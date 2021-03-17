@@ -41,17 +41,12 @@ async function checkPort(port, timeout) {
   const http = require('http')
   const timestamp = Date.now()
   let portFound = false
-  while (!portFound) {
-    if (timestamp + timeout < Date.now()) {
-      throw Error(`port ${port} timed out after ${timeout} ms`)
-    }
-    const req = http.request({ port }, (res) =>
-      res.on('data', () => (portFound = true))
-    )
-
+  while (!portFound && timestamp + timeout > Date.now()) {
+    const req = http.request({ port })
+    req.on('response', () => portFound = true)
     req.on('error', (err) => { })
     req.end()
-    await wait(100)
+    await wait(500)
   }
   return portFound
 }
@@ -61,7 +56,7 @@ async function checkPort(port, timeout) {
  * @returns {string}
  */
 function getBaseUrl() {
-  const {  port } = require('../../package.json').appConfig
+  const { port } = require('../../package.json').appConfig
   return `http://127.0.0.1:${port}/`
 }
 
