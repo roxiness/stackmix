@@ -16,7 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "prettier-plugin-svelte": "^2.1.0",
-    "svelte": "^3.31.2"
+    "svelte": "^3.31.2",
+    "npm": "^7.6.3"    
   },
   "dependencies": {
     "canvasit": "^0.8.1",
