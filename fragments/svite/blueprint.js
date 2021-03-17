@@ -20,16 +20,14 @@ module.exports = {
             },
             build: {
                 polyfillDynamicImport: "false",
-                cssCodeSplit: "false"
+                cssCodeSplit: "false",
+                target: ["'chrome61'", "'edge18'", "'es2019'", "'firefox60'", "'safari11'"]
             },
             optimizeDeps: {
                 exclude: ["'@roxi/routify'"]
             },
             resolve: {
                 dedupe: ["'@roxi/routify'"],
-                alias: {
-                    svelte: $require('resolve')(`__dirname, "node_modules/svelte"`),
-                },
             },
             plugins: [
                 $require('svelte')(getConfigString('svelte'))
