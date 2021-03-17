@@ -6,6 +6,8 @@ module.exports = {
         autoPreprocess: {
             postcss: getConfig('postcss')
         },
-        postcss: {}
+        postcss: {
+            plugins: []
+        }
     })
 }
