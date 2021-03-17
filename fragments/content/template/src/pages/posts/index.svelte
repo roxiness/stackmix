@@ -1,5 +1,5 @@
 <script>
-  import { layout, components, url } from "@roxi/routify";
+  import { components, url } from "@roxi/routify";
   $: postsFolder = $components.find(({ meta }) => meta.name === "postEntries");
   $: posts = postsFolder.children.filter((post) => !post.meta.supersecret);
   $: console.log(posts);
