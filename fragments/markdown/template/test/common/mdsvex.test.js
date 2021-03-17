@@ -9,7 +9,7 @@ const { pageMacro } = require('../lib')
 
 
 test('can view a markdown page', pageMacro, async (t, page) => {
-    await page.goto('http://dev.local:5000/posts/markdown')
+    await page.goto('http://dev.local:5000/guide/markdown')
     // await new Promise(resolve => setTimeout(resolve, 100))
-    t.assert(await page.waitForSelector('#markdown-md'))
+    t.assert(await page.waitForSelector('"Markdown"'))
 })
