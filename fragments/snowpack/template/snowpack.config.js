@@ -1,4 +1,4 @@
-const { assetsDir } = require('./package.json').appConfig
+const { assetsDir, distDir } = require('./package.json').appConfig
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -25,6 +25,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
+    out: distDir
     /* ... */
   },
   alias: {
