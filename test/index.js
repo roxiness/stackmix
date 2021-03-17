@@ -17,6 +17,7 @@ const fragmentCombos = [
 
 const npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm'
 const npx = /^win/.test(process.platform) ? 'npx.cmd' : 'npx'
+const canvasit = /^win/.test(process.platform) ? 'canvasit.cmd' : 'canvasit'
 const stdio = 'inherit'
 
 const workspaceDir = resolve(__dirname, 'workspace')
@@ -28,7 +29,7 @@ const children = fragmentCombos.map(async combo => {
     const name = combo.replace(/,/g, '-')
     const outputDir = resolve(__dirname, 'workspace', name)
     const templatePkgJsonPath = resolve(outputDir, 'package.json')
-    const child = spawn(npx, ['canvasit', '-output', outputDir, '-fragments', combo], { stdio })
+    const child = spawn(canvasit, ['-output', outputDir, '-fragments', combo], { stdio })
     await new Promise(resolve => child.on('close', resolve))
     const pkgjson = require(templatePkgJsonPath)
     pkgjson.name = `test-${name}`
@@ -37,10 +38,11 @@ const children = fragmentCombos.map(async combo => {
 })
 
 Promise.all(children).then(() => {
-    console.log('[test] installing dependencies')
-    execSync('npm install', { cwd: workspaceDir, stdio })
-    console.log('[test] installed')
+    console.log('[test] Installing NPN dependencies')
+    spawnSync(npm, ['install'], { cwd: workspaceDir, stdio })
+    console.log('[test] Installed NPM dependencies')
     for (combo of fragmentCombos) {
+        console.log(`[test][${combo}] "Running tests"`)
         spawnSync(npm, ['test'], { cwd: resolve('test', 'workspace', combo.replace(/,/g, '-')), stdio })
     }
 })
