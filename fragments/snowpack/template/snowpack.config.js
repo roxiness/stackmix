@@ -1,9 +1,9 @@
-const { staticDir } = require('./package.json').appConfig
+const { assetsDir } = require('./package.json').appConfig
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    [staticDir]: { url: '/', static: true },
+    [assetsDir]: { url: '/', static: true },
     src: { url: '/build' },
     '.routify': { url: '/.routify' }
   },
