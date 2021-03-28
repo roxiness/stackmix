@@ -1,8 +1,9 @@
 {
-  "name": "routify-templates",
+  "name": "stackmix",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "bin": "lib/cli.js",
   "scripts": {
     "dev": "canvasit --watch -output output",
     "help": "canvasit help",
@@ -15,13 +16,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "npm": "^7.6.3",
     "prettier-plugin-svelte": "^2.1.0",
-    "svelte": "^3.31.2",
-    "npm": "^7.6.3"    
+    "svelte": "^3.31.2"
   },
   "dependencies": {
     "canvasit": "^0.8.1",
-    "enquirer": "^2.3.6",
+    "commander": "^7.2.0",
     "markdown-it": "^12.0.4",
     "prompts": "^2.4.0"
   }
