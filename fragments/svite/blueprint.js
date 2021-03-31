@@ -2,6 +2,7 @@
 
 /** @type {import('canvasit')['Blueprint']} */
 module.exports = {
+    default: true,
     imports: {
         svelte: ['@svitejs/vite-plugin-svelte'],
         resolve: ['path', 'resolve'],

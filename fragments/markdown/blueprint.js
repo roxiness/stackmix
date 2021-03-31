@@ -1,4 +1,5 @@
 module.exports = {
+    default: true,
     type: 'feature',
     imports: {
         mdsvex: ['mdsvex', 'mdsvex'],
