@@ -19,11 +19,11 @@
     "npm": "^7.6.3"
   },
   "dependencies": {
-    "svelte": "^3.31.2",
-    "prettier-plugin-svelte": "^2.1.0",
     "canvasit": "^0.8.2",
     "commander": "^7.2.0",
     "markdown-it": "^12.0.4",
-    "prompts": "^2.4.0"
+    "prettier-plugin-svelte": "^2.1.0",
+    "prompts": "^2.4.0",
+    "svelte": "^3.31.2"
   }
 }
