@@ -1,12 +1,25 @@
-# Routify Templates [alpha]
-Welcome to the Routify Templates repo! This project is still in development and should be considered experimental.
+# Stackmix [prerease]
+### Template generator based on Svelte and Routify.
 
-If you're okay with the experimental status, please take it for a whirl and report any issues you may encounter.
+---
 
+Don't be fooled by the "prerelease". You should totally take it for a ride. 😎
+
+## Getting started
+```
+npx stackmix [app-name]
+cd [app-name]
+npm install
+npm run dev
+```
+
+Remember to report any bugs back to us. 😉
+
+---
 
 ## Getting started [for contributors and testers]
 ```bash
-$ git clone https://github.com/roxiness/routify-templates.git
+$ git clone https://github.com/roxiness/stackmix.git
 $ cd routify-templates
 $ npm install
 ```
