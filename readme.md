@@ -1,4 +1,4 @@
-# Stackmix [prerease]
+# Stackmix [prerelease]
 ### Template generator based on Svelte and Routify.
 
 ---
