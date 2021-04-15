@@ -28,7 +28,7 @@ function convertMarkdownToSvelte(file) {
         const md = require('markdown-it')({ html: true })
         file.content = md.render(file.content)
         file.remove()
-        file.filepath = file.filepath.replace(/\..+?$/, '.svelte')
+        file.filepath = file.filepath.replace(/\.[^.]+?$/, '.svelte')
         file.save()
     }
 }

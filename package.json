@@ -1,5 +1,5 @@
 {
-  "name": "stackmixr",
+  "name": "stackmix",
   "version": "0.1.1",
   "description": "",
   "main": "index.js",
@@ -19,11 +19,15 @@
     "npm": "^7.6.3"
   },
   "dependencies": {
-    "canvasit": "^0.9.0",
+    "canvasit": "^0.9.1",
     "commander": "^7.2.0",
     "markdown-it": "^12.0.4",
     "prettier-plugin-svelte": "^2.1.0",
     "prompts": "^2.4.0",
     "svelte": "^3.31.2"
+  },
+  "canvasit": {
+    "include": ["base"],
+    "basepath": "fragments"
   }
 }
