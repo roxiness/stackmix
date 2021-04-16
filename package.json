@@ -27,7 +27,9 @@
     "svelte": "^3.31.2"
   },
   "canvasit": {
-    "include": ["base"],
+    "include": [
+      "base"
+    ],
     "basepath": "fragments"
   }
 }
