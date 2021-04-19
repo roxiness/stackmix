@@ -12,6 +12,7 @@ module.exports = {
         },
 
         tailwindcss: {
+            mode: "'jit'",
             darkMode: "'class'",
             future: {
                 removeDeprecatedGapUtilities: "true",
