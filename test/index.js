@@ -7,7 +7,7 @@ const { spawnSync, spawn, execFileSync, execSync } = require('child_process')
 
 
 const fragmentCombos = [
-    'rollup,auth,content,i18n,milligram,markdown,spank',
+    'rollup',
     'vite',
     'nollup',
     'snowpack'
