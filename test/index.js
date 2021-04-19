@@ -57,5 +57,5 @@ function removeTemplatesFromWorkspaceDir(dir) {
             .forEach(filepath => rmdirSync(filepath, { recursive: true }))
     }
     else
-        mkdirSync(file)
+        mkdirSync(dir)
 }
