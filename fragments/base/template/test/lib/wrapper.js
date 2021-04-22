@@ -7,44 +7,54 @@ const timeout = 15000 // 15s
 const npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm'
 const npx = /^win/.test(process.platform) ? 'npx.cmd' : 'npx'
 
-// assign `dev` or `build` to mode and `ava` to cmd
-const [mode, cmd, ...args] = process.argv.slice(2)
+
+// creates function with teardown script
+const createTeardown = pid => () => fkill(pid, { tree: true, force: true })
 
 const setups = {
-  async dev() {
-    console.log('[app] test dev')
+  async dev() {    
+    // run dev server
     const child = await spawn(npm, ['run', 'dev'])
-    console.log('[app] test completed.')
-    const teardown = () => fkill(child.pid, { tree: true, force: true })
-    
-    const ready = await checkPort(port, timeout)
-    if (ready) {
+        
+    if (await checkPort(port, timeout)) {
       await wait(500)
-      return teardown
+      return createTeardown(child.pid)
     } else {
-      teardown()
+      createTeardown(child.pid)()
       throw Error(`dev on port ${port} timed out after ${timeout} ms`)
     }
   },
-  async build() {
-    console.log('[app] test build')
+  async build() {    
+    // build app
     spawnSync(npm, ['run', 'build'])
-    const child = await spawn(npm, ['run', 'serve'])
-    console.log('[app] test completed.')
-    const teardown = () => fkill(child.pid, { tree: true, force: true })
     
-    if (await checkPort(port, timeout)) return teardown
+    // serve app
+    const child = await spawn(npm, ['run', 'serve'])
+    
+    if (await checkPort(port, timeout)) {
+        return createTeardown(child.pid)
+    }
     else {
-      teardown()
+      createTeardown(child.pid)()
       throw Error(`build on port ${port} timed out after ${timeout} ms`)
     }
-  }
+  },
 }
 
-async function wrapSpawn() {
+// wrap the CLI command 
+runCliCommand()
+
+async function runCliCommand() {    
+  // assign `dev` or `build` to mode and `ava` to cmd
+  const [mode, cmd, ...args] = process.argv.slice(2)
+
+  console.log(`[app] setup ${mode} test...`)
   const teardown = await setups[mode]()
+  console.log(`[app] setup ${mode} test... Done.`)
+  console.log(`run: ${cmd} ${args.join(' ')}`)
   spawnSync(npx, [cmd, ...args], { stdio: 'inherit' })
+  console.log(`[app] teardown ${mode} test...`)
   teardown()
+  console.log(`[app] teardown ${mode} test... Done.`)
 }
 
-wrapSpawn()
