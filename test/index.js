@@ -2,8 +2,7 @@ const prompts = require('prompts');
 const { writeFileSync, existsSync, mkdirSync, rmdirSync, readdirSync, statSync } = require('fs')
 const { resolve } = require('path')
 const { spawnSync, spawn, execFileSync, execSync } = require('child_process')
-
-
+const kleur = require('kleur')
 
 
 const fragmentCombos = [
@@ -42,7 +41,10 @@ Promise.all(children).then(() => {
     spawnSync(npm, ['install'], { cwd: workspaceDir, stdio })
     console.log('[test] Installed NPM dependencies')
     for (combo of fragmentCombos) {
-        console.log(`[test][${combo}] "Running tests"`)
+        console.log('')
+        console.log('----------------------------------')
+        console.log(kleur.green(`[test] [${combo}] "Running tests"`))
+        console.log('----------------------------------')
         spawnSync(npm, ['test'], { cwd: resolve('test', 'workspace', combo.replace(/,/g, '-')), stdio })
     }
 })
