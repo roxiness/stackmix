@@ -9,7 +9,7 @@ const { pageMacro } = require('../pageMacro')
 
 
 test('can navigate', pageMacro, async (t, page) => {
-    await page.goto('http://dev.local:5000/')
+    await page.goto('http://localhost:5000/')
     t.assert(await page.waitForSelector('nav'))
     
     await page.click('"posts"')
