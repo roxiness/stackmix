@@ -40,11 +40,14 @@ Promise.all(children).then(() => {
     console.log('[test] Installing NPN dependencies')
     spawnSync(npm, ['install'], { cwd: workspaceDir, stdio })
     console.log('[test] Installed NPM dependencies')
-    for (combo of fragmentCombos) {
-        console.log('')
-        console.log('----------------------------------')
-        console.log(kleur.green(`[test] [${combo}] "Running tests"`))
-        console.log('----------------------------------')
+    for (const combo of fragmentCombos) {
+        const msg = kleur.bold(`| TEST: ${kleur.yellow(combo)} |`)
+        const length = msg.length - 20
+        console.log(`+${new Array(length).join('-')}+`)
+        console.log(`|${new Array(length).join(' ')}|`)
+        console.log(msg)
+        console.log(`|${new Array(length).join(' ')}|`)
+        console.log(`+${new Array(length).join('-')}+`)
         spawnSync(npm, ['test'], { cwd: resolve('test', 'workspace', combo.replace(/,/g, '-')), stdio })
     }
 })
