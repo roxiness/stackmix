@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="stackmix" width="125" src="https://github.com/roxiness/stackmix/tree/master/logo.svg">
+    <img alt="stackmix" width="125" src="https://github.com/roxiness/stackmix/tree/master/.github/logo.svg">
 </p>
 
 # Stackmix [prerelease]
