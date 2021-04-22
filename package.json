@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "ava": "^3.15.0",
     "npm": "^7.6.3"
   },
   "dependencies": {
