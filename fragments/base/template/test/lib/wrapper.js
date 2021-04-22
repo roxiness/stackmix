@@ -52,10 +52,10 @@ async function runCliCommand() {
   const teardown = await setups[mode]()
   console.log(`[app] setup ${mode} test... Done.`)
   console.log(`[app] run: ${cmd} ${args.join(' ')}`)
-  spawnSync(npx, [cmd, ...args], { stdio: 'inherit' })
+  const {status} = spawnSync(npx, [cmd, ...args], { stdio: 'inherit' })
   console.log(`[app] teardown ${mode} test...`)
   teardown()
   console.log(`[app] teardown ${mode} test... Done.`)
-  process.exit(0)
+  process.exit(status)
 }
 
