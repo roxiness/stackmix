@@ -24,12 +24,12 @@ Remember to report any bugs back to us. 😉
 ## Getting started [for contributors and testers]
 ```bash
 $ git clone https://github.com/roxiness/stackmix.git
-$ cd routify-templates
+$ cd stackmix
 $ npm install
 ```
 
 #### To build a template from fragments
-`npm run generate`
+`node lib/cli`
 
 __The wizard can be skipped by providing fragments as arguments__
 `npm run generate -- -fragments rollup,i18n,navigation,content,miligram,mdsvex`
