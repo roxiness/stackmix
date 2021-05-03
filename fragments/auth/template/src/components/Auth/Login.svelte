@@ -18,3 +18,11 @@
     {/if}
   </form>
 </div>
+
+<style>
+  input {
+    color: black;
+    padding: 6px;
+    border-radius: 5px;
+  }
+</style>

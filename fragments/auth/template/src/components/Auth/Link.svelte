@@ -2,6 +2,7 @@
   import { user, authenticating } from "./store";
   import { url } from "@roxi/routify";
 </script>
+
 <ul>
   <li>
     {#if $authenticating}
@@ -11,6 +12,9 @@
     {:else}
       <a href={$url("/login")}>Login</a>
     {/if}
+  </li>
+  <li>
+    <a href={$url("/protected")}>Go to protected pages</a>
   </li>
 </ul>
 
@@ -23,7 +27,7 @@
     display: block;
   }
   li {
-    margin-left: 6px;
+    margin: 1rem;
     list-style: none;
   }
 </style>
