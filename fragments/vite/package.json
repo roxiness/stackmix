@@ -6,9 +6,14 @@
     "serve:vite": "vite preview"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.6",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.10",
     "npm-run-all": "^4.1.5",
-    "svelte-hmr": "^0.12.5",
-    "vite": "^2.0.5"
+    "svelte-hmr": "^0.14.4",
+    "vite": "^2.3.3",
+    "vite-main-js": "^0.0.1"
+  },
+  "appConfig": {
+    "script": "dist/main.js",
+    "buildDir": "dist/assets"
   }
 }

@@ -6,7 +6,8 @@ module.exports = {
     imports: {
         svelte: ['@sveltejs/vite-plugin-svelte'],
         resolve: ['path', 'resolve'],
-        port: ['./package.json', 'appConfig', 'port']
+        port: ['./package.json', 'appConfig', 'port'],
+        viteMainJs: ['vite-main-js']
     },
     type: 'bundler',
     configs: ({ getConfigString, $require }) => ({
@@ -31,13 +32,13 @@ module.exports = {
                 dedupe: ["'@roxi/routify'"],
             },
             plugins: [
+                $require('viteMainJs')(),
                 $require('svelte')(getConfigString('svelte'))
             ]
         }
     }),
     hooks: {
         afterConfig: ctx => {
-            delete (ctx.configs.packagejson.appConfig.script)
             delete (ctx.configs.packagejson.spassr)
             delete (ctx.configs.packagejson.spank)
         },
