@@ -14,6 +14,8 @@
   },
   "appConfig": {
     "script": "dist/main.js",
-    "buildDir": "dist/assets"
+    "buildDir": "dist/assets",
+    "assetsDir": "public",
+    "template": "dist/index.html"
   }
 }

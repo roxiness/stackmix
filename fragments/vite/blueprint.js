@@ -20,11 +20,7 @@ module.exports = {
             server: {
                 port: $require('port')
             },
-            build: {
-                polyfillDynamicImport: "false",
-                cssCodeSplit: "false",
-                target: ["'chrome61'", "'edge18'", "'es2019'", "'firefox60'", "'safari11'"]
-            },
+            build: { cssCodeSplit: "false" },
             optimizeDeps: {
                 exclude: ["'@roxi/routify'"]
             },
