@@ -7,7 +7,6 @@
 const test = require('ava')
 const { pageMacro } = require('../lib')
 
-
 test('can view a markdown page', pageMacro, async (t, page) => {
     await page.goto('http://localhost:5000/guide/markdown')
     // await new Promise(resolve => setTimeout(resolve, 100))

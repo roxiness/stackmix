@@ -2,10 +2,7 @@
     __SCRIPT__
 </script>
 
-<header>
-    __NAVIGATION__
-    __HEADER__
-</header>
+<header>__NAVIGATION__ __HEADER__</header>
 
 <main>
     __HTML__

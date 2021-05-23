@@ -9,19 +9,21 @@ module.exports = {
         svelte: {
             // Extract component CSS — better performance
             // css: "css => css.write(`bundle.css`)",
-            preprocess: []
+            preprocess: [],
         },
-        packagejson: require('./package.json')
+        packagejson: require('./package.json'),
     }),
     hooks: {
         afterPatch: async ctx => {
-            ctx.writeTo('package.json', JSON.stringify(ctx.configs.packagejson, null, 2))
+            ctx.writeTo(
+                'package.json',
+                JSON.stringify(ctx.configs.packagejson, null, 2),
+            )
             if (!ctx.configs.options.base.useMarkdown)
                 await ctx.fileWalker(convertMarkdownToSvelte)
-        }
-    }
+        },
+    },
 }
-
 
 function convertMarkdownToSvelte(file) {
     if (file.ext === 'md') {

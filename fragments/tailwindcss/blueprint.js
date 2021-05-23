@@ -3,37 +3,37 @@ module.exports = {
     dependencies: ['postcss'],
     imports: {
         tailwind: ['tailwindcss'],
-        postcssImport: ['postcss-import']
+        postcssImport: ['postcss-import'],
     },
     configs: ({ getConfigString, getConfig, $require }) => ({
         packagejson: require('./package.json'),
         autoPreprocess: {
-            postcss: getConfig('postcss')
+            postcss: getConfig('postcss'),
         },
 
         tailwindcss: {
             mode: "'jit'",
             darkMode: "'class'",
             future: {
-                removeDeprecatedGapUtilities: "true",
-                purgeLayersByDefault: "true",
+                removeDeprecatedGapUtilities: 'true',
+                purgeLayersByDefault: 'true',
             },
             plugins: [],
             purge: {
                 content: ["'./src/**/*.svelte'"],
-                enabled: "production",
+                enabled: 'production',
             },
         },
         postcss: {
             plugins: [
                 $require('tailwind')(getConfigString('tailwindcss')),
-                $require("postcssImport")
-            ]
+                $require('postcssImport'),
+            ],
         },
     }),
     hooks: {
         beforeConfig(ctx) {
             ctx.prompt
-        }
-    }
+        },
+    },
 }

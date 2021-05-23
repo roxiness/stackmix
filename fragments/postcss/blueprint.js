@@ -4,10 +4,10 @@ module.exports = {
     configs: ({ getConfig }) => ({
         packagejson: require('./package.json'),
         autoPreprocess: {
-            postcss: getConfig('postcss')
+            postcss: getConfig('postcss'),
         },
         postcss: {
-            plugins: []
-        }
-    })
+            plugins: [],
+        },
+    }),
 }

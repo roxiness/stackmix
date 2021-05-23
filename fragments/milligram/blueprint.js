@@ -1,4 +1,4 @@
 module.exports = {
     type: 'feature',
-    default: true
+    default: true,
 }

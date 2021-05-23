@@ -5,7 +5,10 @@
         "routify-plugin-frontmatter": "^1.0.1"
     },
     "routify": {
-        "extensions": ["md", "svelte"],
+        "extensions": [
+            "md",
+            "svelte"
+        ],
         "plugins": {
             "routify-plugin-frontmatter": {}
         }

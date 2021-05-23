@@ -10,26 +10,26 @@ module.exports = {
         livereload: ['rollup-plugin-livereload'],
         terser: ['rollup-plugin-terser', 'terser'],
         buildDir: ['./package.json', 'appConfig', 'buildDir'],
-        distDir: ['./package.json', 'appConfig', 'distDir']
+        distDir: ['./package.json', 'appConfig', 'distDir'],
     },
-    configs: ({ getConfigString, $require }) => ({        
+    configs: ({ getConfigString, $require }) => ({
         test: {
             domain: "'localhost'",
-            port: "5000"
+            port: '5000',
         },
         rollupResolve: {
-            browser: "true",
-            dedupe: "importee => !!importee.match(/svelte(\\/|$)/)"
+            browser: 'true',
+            dedupe: 'importee => !!importee.match(/svelte(\\/|$)/)',
         },
         rollup: {
-            preserveEntrySignatures: "false",
-            input: ["`src/main.js`"],
+            preserveEntrySignatures: 'false',
+            input: ['`src/main.js`'],
             output: {
-                sourcemap: "true",
+                sourcemap: 'true',
                 format: "'esm'",
                 dir: $require('buildDir'),
                 // for performance, disabling filename hashing in development
-                chunkFileNames: "`[name]${production && '-[hash]' || ''}.js`"
+                chunkFileNames: "`[name]${production && '-[hash]' || ''}.js`",
             },
             plugins: [
                 $require('svelte')(getConfigString('svelte')),
@@ -39,10 +39,12 @@ module.exports = {
                 $require('commonjs')(),
 
                 `production && ${$require('terser')()}`,
-                `!production && ${$require('livereload')($require('distDir'))} , // refresh entire window when code is updated`, 
+                `!production && ${$require('livereload')(
+                    $require('distDir'),
+                )} , // refresh entire window when code is updated`,
             ],
-            watch: { clearScreen: "false" }
+            watch: { clearScreen: 'false' },
         },
-        packagejson: require('./template/package.json')
+        packagejson: require('./template/package.json'),
     }),
 }

@@ -11,4 +11,3 @@ test('can see frontpage', pageMacro, async (t, page) => {
     await page.goto(baseUrl)
     t.assert(await page.waitForSelector('main'))
 })
-

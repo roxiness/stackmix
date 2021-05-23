@@ -1,5 +1,5 @@
 module.exports = {
     configs: () => ({
-        packagejson: { workspaces: ['../../*'] }
-    })
+        packagejson: { workspaces: ['../../*'] },
+    }),
 }

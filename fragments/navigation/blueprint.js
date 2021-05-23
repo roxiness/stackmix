@@ -1,4 +1,4 @@
 module.exports = {
     default: true,
-    type: 'template'
+    type: 'template',
 }

@@ -11,7 +11,7 @@ const { spawnSync } = require('child_process')
 
 test.before(async t => {
     const npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm'
-    spawnSync(npm, ['run', 'run:docker'], { stdio: 'inherit' })    
+    spawnSync(npm, ['run', 'run:docker'], { stdio: 'inherit' })
     await checkPort(80, 15000)
 })
 

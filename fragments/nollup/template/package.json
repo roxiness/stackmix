@@ -1,14 +1,14 @@
 {
-  "@comments scripts": {
-    "dev:rollup": "develop with features like SSR and serviceworker enabled",
-    "build:rollup": "build rollup"
-  },
-  "scripts": {    
-    "dev": "run-p dev:routify dev:nollup",
-    "dev:nollup": "nollup -c",
-    "dev:ssr": "run-p dev:routify dev:rollup serve"
-  },
-  "devDependencies": {    
-    "nollup": "^0.15.3"
-  }
+    "@comments scripts": {
+        "dev:rollup": "develop with features like SSR and serviceworker enabled",
+        "build:rollup": "build rollup"
+    },
+    "scripts": {
+        "dev": "run-p dev:routify dev:nollup",
+        "dev:nollup": "nollup -c",
+        "dev:ssr": "run-p dev:routify dev:rollup serve"
+    },
+    "devDependencies": {
+        "nollup": "^0.15.3"
+    }
 }

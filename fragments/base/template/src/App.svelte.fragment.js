@@ -3,6 +3,5 @@ exports.patch = ({ placeholders, configs, stringify }) => {
     if (config) {
         placeholders.script.push(`const config = ${stringify(config)}`)
         placeholders.html.push(`<Router {routes} {config} />`)
-    } else
-        placeholders.html.push(`<Router {routes}  />`)
+    } else placeholders.html.push(`<Router {routes}  />`)
 }

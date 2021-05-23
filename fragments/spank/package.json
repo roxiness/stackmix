@@ -1,8 +1,8 @@
 {
-  "scripts": {
-    "build:static": "spank"
-  },
-  "devDependencies": {
-    "spank": "^1.5.0"
-  }
+    "scripts": {
+        "build:static": "spank"
+    },
+    "devDependencies": {
+        "spank": "^1.5.0"
+    }
 }

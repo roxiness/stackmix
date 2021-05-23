@@ -1,60 +1,59 @@
 #app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 main {
-  flex-grow: 1;
-  overflow: hidden;
+    flex-grow: 1;
+    overflow: hidden;
 }
 .node_posts__layout {
-  background: #0bf5cc;
+    background: #0bf5cc;
 }
 .node_guide__layout {
-  background: #a1fac3;
+    background: #a1fac3;
 }
 .node_home__layout {
-  background: #88f0d0;
+    background: #88f0d0;
 }
 .node_introduction__layout {
-  background: #7fc5bb;
+    background: #7fc5bb;
 }
 .posts .post {
-  background: white;
+    background: white;
 }
 .transition {
-  overflow: auto;
+    overflow: auto;
 }
 .container {
-  padding-top: 32px;
-  padding-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 /* .transition[style^=' animation'] {
   overflow: hidden;
 } */
 
-
 footer nav {
-  text-transform: uppercase;
-  background: white;
-  display: flex;
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  justify-content: space-evenly;
+    text-transform: uppercase;
+    background: white;
+    display: flex;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: space-evenly;
 }
 
 footer a {
-  font-size: 14px;
-  color: #aaa;
-  text-transform: uppercase;
-  flex-grow: 1;
-  text-align: center;
-  line-height: 64px;
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 64px;
 }
 
 footer .overlay {
-  transition: all 0.3s;
-  position: fixed;
-  border-bottom: 3px solid #a1fac3;
-  pointer-events: none;
+    transition: all 0.3s;
+    position: fixed;
+    border-bottom: 3px solid #a1fac3;
+    pointer-events: none;
 }

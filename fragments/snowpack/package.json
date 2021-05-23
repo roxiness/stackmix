@@ -1,12 +1,12 @@
 {
-  "scripts": {
-    "dev": "run-p dev:*",
-    "dev:snowpack": "snowpack dev",
-    "build:snowpack": "snowpack build"
-  },
-  "devDependencies": {
-    "@snowpack/plugin-dotenv": "^2.0.5",
-    "@snowpack/plugin-svelte": "^3.5.2",
-    "snowpack": "^3.0.13"
-  }
+    "scripts": {
+        "dev": "run-p dev:*",
+        "dev:snowpack": "snowpack dev",
+        "build:snowpack": "snowpack build"
+    },
+    "devDependencies": {
+        "@snowpack/plugin-dotenv": "^2.0.5",
+        "@snowpack/plugin-svelte": "^3.5.2",
+        "snowpack": "^3.0.13"
+    }
 }

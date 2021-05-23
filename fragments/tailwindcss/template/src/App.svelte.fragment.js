@@ -1,4 +1,3 @@
-
 exports.patch = ({ placeholders, configs, stringify }) => {
     placeholders.style.push(`
     @tailwind base;

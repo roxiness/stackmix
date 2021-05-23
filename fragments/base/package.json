@@ -1,54 +1,54 @@
 {
-  "name": "routify-app",
-  "version": "1.0.0",
-  "@comments scripts": {
-    "dev": "run all dev:* scripts",
-    "dev:routify": "generate Routify's routes.js on filechange",
-    "build": "run all build:* scripts",
-    "build:routify": "build routify",
-    "serve": "serve content in 'dist' folder"
-  },
-  "scripts": {
-    "dev": "run-p dev:* serve:*",
-    "dev:routify": "routify",
-    "serve": "run-p serve:*",
-    "serve:spa": "spassr",
-    "serve:ssr": "spassr --ssr --port 5005",
-    "build": "cross-env NODE_ENV=production run-s build:*",
-    "build:routify": "routify -b",
-    "test": "npm run test:dev && npm run test:build",
-    "test:dev": "node test/lib/wrapper dev ava test/{common,dev}/**/*.test.js",
-    "test:build": "node test/lib/wrapper build ava test/{common,build}/**/*.test.js"
-  },
-  "devDependencies": {
-    "@roxi/routify": "^2.14.0",
-    "fkill": "^7.1.0",
-    "npm-run-all": "^4.1.5",
-    "svelte": "^3.35.0",
-    "cross-env": "^7.0.3",
-    "spassr": "^2.4.1-0"
-  },
-  "routify": {
-    "extensions": "svelte,html,svx,md"
-  },
-  "@comment options": [
-    "config provides defaults for spassr, spank, tossr and poindexter.",
-    "You can delete the field and this comment, if you use neither."
-  ],
-  "appConfig": {
-    "port": 5000,
-    "assetsDir": "static",
-    "template": "static/__app.html",
-    "distDir": "dist",
-    "buildDir": "dist/build",
-    "script": "dist/build/main.js"
-  },
-  "spassr": {
-    "ssrOptions": {
-      "inlineDynamicImports": true
+    "name": "routify-app",
+    "version": "1.0.0",
+    "@comments scripts": {
+        "dev": "run all dev:* scripts",
+        "dev:routify": "generate Routify's routes.js on filechange",
+        "build": "run all build:* scripts",
+        "build:routify": "build routify",
+        "serve": "serve content in 'dist' folder"
+    },
+    "scripts": {
+        "dev": "run-p dev:* serve:*",
+        "dev:routify": "routify",
+        "serve": "run-p serve:*",
+        "serve:spa": "spassr",
+        "serve:ssr": "spassr --ssr --port 5005",
+        "build": "cross-env NODE_ENV=production run-s build:*",
+        "build:routify": "routify -b",
+        "test": "npm run test:dev && npm run test:build",
+        "test:dev": "node test/lib/wrapper dev ava test/{common,dev}/**/*.test.js",
+        "test:build": "node test/lib/wrapper build ava test/{common,build}/**/*.test.js"
+    },
+    "devDependencies": {
+        "@roxi/routify": "^2.14.0",
+        "fkill": "^7.1.0",
+        "npm-run-all": "^4.1.5",
+        "svelte": "^3.35.0",
+        "cross-env": "^7.0.3",
+        "spassr": "^2.4.1-0"
+    },
+    "routify": {
+        "extensions": "svelte,html,svx,md"
+    },
+    "@comment options": [
+        "config provides defaults for spassr, spank, tossr and poindexter.",
+        "You can delete the field and this comment, if you use neither."
+    ],
+    "appConfig": {
+        "port": 5000,
+        "assetsDir": "static",
+        "template": "static/__app.html",
+        "distDir": "dist",
+        "buildDir": "dist/build",
+        "script": "dist/build/main.js"
+    },
+    "spassr": {
+        "ssrOptions": {
+            "inlineDynamicImports": true
+        }
+    },
+    "ava": {
+        "verbose": true
     }
-  },
-  "ava": {
-    "verbose": true
-  }
 }

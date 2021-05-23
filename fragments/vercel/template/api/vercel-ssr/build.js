@@ -3,18 +3,20 @@ const { existsSync } = require('fs')
 const { execSync } = require('child_process')
 const { rollup } = require('rollup')
 
-const shouldBuildSpa = process.env.NOW_GITHUB_DEPLOYMENT || process.env.NOW_BUILDER
+const shouldBuildSpa =
+    process.env.NOW_GITHUB_DEPLOYMENT || process.env.NOW_BUILDER
 const script = resolve(__dirname, '../../dist/build/main.js')
 const bundlePath = resolve(__dirname, '../../dist/build/bundle.js')
 
 build()
 
-
 async function build() {
     if (shouldBuildSpa)
-        execSync('npm install && npm run build:app', { cwd: resolve('..', '..'), stdio: 'inherit' })
-    else
-        await waitForAppToExist()
+        execSync('npm install && npm run build:app', {
+            cwd: resolve('..', '..'),
+            stdio: 'inherit',
+        })
+    else await waitForAppToExist()
 
     buildSSRBundle()
 }

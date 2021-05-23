@@ -1,15 +1,17 @@
 module.exports = {
     type: 'feature',
     imports: {
-        autoPreprocess: ['svelte-preprocess']
+        autoPreprocess: ['svelte-preprocess'],
     },
     configs: ({ getConfigString, $require }) => ({
         packagejson: require('./package.json'),
         svelte: {
             preprocess: [
-                $require('autoPreprocess')(getConfigString('autoPreprocess'))
-            ]
+                $require('autoPreprocess')(getConfigString('autoPreprocess')),
+            ],
         },
-        autoPreprocess: { /** config */ },
-    })
+        autoPreprocess: {
+            /** config */
+        },
+    }),
 }

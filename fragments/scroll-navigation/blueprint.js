@@ -1,3 +1,3 @@
-module.exports = {    
-    type: 'template'
+module.exports = {
+    type: 'template',
 }
