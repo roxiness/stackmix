@@ -4,7 +4,7 @@
 module.exports = {
     default: true,
     imports: {
-        svelte: ['@sveltejs/vite-plugin-svelte'],
+        svelte: ['@sveltejs/vite-plugin-svelte', 'svelte'],
         resolve: ['path', 'resolve'],
         port: ['./package.json', 'appConfig', 'port'],
         viteMainJs: ['vite-main-js'],
