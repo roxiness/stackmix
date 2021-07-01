@@ -2,7 +2,7 @@
     <img alt="stackmix" width="480" src="https://raw.githubusercontent.com/roxiness/stackmix/master/.github/logo.svg">
 </p>
 
-# Stackmix [prerelease]
+# Stackmix [preview]
 ### Template generator based on Svelte and Routify.
 
 ---
