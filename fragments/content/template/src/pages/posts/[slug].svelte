@@ -8,7 +8,6 @@
     )
 </script>
 
-<!-- routify:options index=300 -->
 <div class="container">
     {#if Post}
         {#await Post.component then page}
