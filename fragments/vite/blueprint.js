@@ -20,7 +20,11 @@ module.exports = {
             server: {
                 port: $require('port'),
             },
-            build: { cssCodeSplit: 'false' },
+            build: { 
+                // remove this if you're not using tossr, spassr or spank
+                polyfillModulePreload: false,
+                cssCodeSplit: 'false'
+            },
             optimizeDeps: {
                 exclude: ["'@roxi/routify'"],
             },
