@@ -22,7 +22,7 @@ module.exports = {
             },
             build: { 
                 // remove this if you're not using tossr, spassr or spank
-                polyfillModulePreload: false,
+                polyfillModulePreload: 'false',
                 cssCodeSplit: 'false'
             },
             optimizeDeps: {
